@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cglid46uegmw1"]
+
+[ext_resource type="PackedScene" uid="uid://dboekm48xftm2" path="res://fish2.tscn" id="1_6f41m"]
+[ext_resource type="PackedScene" uid="uid://djuylkkukl2fq" path="res://Destructable.tscn" id="2_e5a8t"]
+[ext_resource type="PackedScene" uid="uid://byq6cjju2jjl5" path="res://ArcherFish.tscn" id="3_psd5m"]
+
+[node name="MainScene" type="Node2D"]
+position = Vector2(0, -1)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.5, 1.5)
+
+[node name="Fish" parent="." instance=ExtResource("1_6f41m")]
+position = Vector2(23, -35)
+speed = 300.0
+
+[node name="Destructable" parent="." instance=ExtResource("2_e5a8t")]
+position = Vector2(220, -52)
+health = 5
+
+[node name="RigidBody2D" parent="." node_paths=PackedStringArray("fish") instance=ExtResource("3_psd5m")]
+position = Vector2(-26, 113)
+fish = NodePath("../Fish")

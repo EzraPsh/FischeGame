@@ -1,0 +1,165 @@
+[gd_scene load_steps=14 format=3 uid="uid://c3nduf3tyl83q"]
+
+[ext_resource type="Texture2D" uid="uid://tvt7lw41jfmk" path="res://icon.svg" id="1_x61hf"]
+[ext_resource type="Script" path="res://FishMovement.gd" id="1_xnk5g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h8iru"]
+size = Vector2(64, 32)
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ufdwg"]
+animation = &"Charge"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_idtdf"]
+animation = &"Move"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dbhyo"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_trpob"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_eeeae"]
+advance_mode = 2
+advance_condition = &"attack"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ih232"]
+states/Charge/node = SubResource("AnimationNodeAnimation_ufdwg")
+states/Charge/position = Vector2(368, 17)
+states/Move/node = SubResource("AnimationNodeAnimation_idtdf")
+states/Move/position = Vector2(368, 100)
+transitions = ["Charge", "Move", SubResource("AnimationNodeStateMachineTransition_dbhyo"), "Start", "Move", SubResource("AnimationNodeStateMachineTransition_trpob"), "Move", "Charge", SubResource("AnimationNodeStateMachineTransition_eeeae")]
+graph_offset = Vector2(-12, -39)
+
+[sub_resource type="Animation" id="Animation_yqovi"]
+resource_name = "Charge"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.5, 0.25), Vector2(0.625, 0.164063), Vector2(0.625, 0.164063), Vector2(0.5, 0.25)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"charge_control"
+}, {
+"args": ["parameters/conditions/attack", false],
+"method": &"set_anim_cond"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [false],
+"method": &"move_set"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_58x0r"]
+resource_name = "Move"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("1_x61hf"), ExtResource("1_x61hf")]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [true],
+"method": &"move_set"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_qieit"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_x61hf")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Icon:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, 0.25)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5s2fc"]
+_data = {
+"Charge": SubResource("Animation_yqovi"),
+"Move": SubResource("Animation_58x0r"),
+"RESET": SubResource("Animation_qieit")
+}
+
+[node name="Fish" type="CharacterBody2D"]
+script = ExtResource("1_xnk5g")
+speed = 10.0
+
+[node name="Icon" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.25)
+texture = ExtResource("1_x61hf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_h8iru")
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_ih232")
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/conditions/attack = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5s2fc")
+}

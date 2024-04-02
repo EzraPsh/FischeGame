@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cu45kgvhbq8aw"]
+
+[ext_resource type="Texture2D" uid="uid://tvt7lw41jfmk" path="res://icon.svg" id="1_cfksi"]
+[ext_resource type="Script" path="res://EnemyBullet.gd" id="1_fmi4f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jgotc"]
+size = Vector2(12, 12)
+
+[node name="Bullet" type="StaticBody2D"]
+script = ExtResource("1_fmi4f")
+
+[node name="Icon" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_cfksi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jgotc")

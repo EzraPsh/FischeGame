@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://djuylkkukl2fq"]
+
+[ext_resource type="Script" path="res://Destructable.gd" id="1_ovbu3"]
+[ext_resource type="Texture2D" uid="uid://tvt7lw41jfmk" path="res://icon.svg" id="1_rluqg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_emvvi"]
+size = Vector2(128, 130)
+
+[node name="Destructable" type="StaticBody2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_ovbu3")
+health = 2
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture = ExtResource("1_rluqg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_emvvi")
