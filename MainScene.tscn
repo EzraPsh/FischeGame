@@ -21,4 +21,5 @@ health = 10
 
 [node name="RigidBody2D" parent="." node_paths=PackedStringArray("fish") instance=ExtResource("3_psd5m")]
 position = Vector2(-26, 113)
+inertia = 1.0
 fish = NodePath("../Fish")

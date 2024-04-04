@@ -14,7 +14,6 @@ func enter(state_machine : FishStateMachine):
 	
 	await dash_len.timeout
 	
-	print("changing")
 	exit(state_machine)
 	state_machine.fish_state = move_state
 	
@@ -23,12 +22,6 @@ func update(state_machine : FishStateMachine):
 	
 func phys_update(state_machine : FishStateMachine):
 	state_machine.slow_down_mult(0.1)
-	
-	#if state_machine.velocity.length() <= 300:
-	#print("changing")
-	#exit(state_machine)
-	#state_machine.fish_state = move_state
-	
 	
 func exit(state_machine : FishStateMachine):
 	state_machine.attack_area.reset()
