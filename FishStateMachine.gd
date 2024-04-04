@@ -29,3 +29,6 @@ func slow_down_mult(mult : float):
 
 func lookat_mouse():
 	look_at(get_global_mouse_position())
+
+func _on_attack_area_attack_hit():
+	fish_state.on_finish_charge(self)

@@ -1,12 +1,14 @@
 class_name AttackArea
 extends Area2D
 
+signal attack_hit
+
 var enabled : bool = false
 
 func _on_body_entered(body):
 	if enabled && body is Destructable:
-		print("Dest Entered!")
 		body.take_hit()
+		attack_hit.emit()
 		enabled = false
 
 func reset():

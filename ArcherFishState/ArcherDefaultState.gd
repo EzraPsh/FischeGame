@@ -8,7 +8,8 @@ func update(state_machine : ArcherFishSM):
 	state_machine.lookat_player()
 	
 	if state_machine.look_dir.distance_to(state_machine.fish.global_position) <= 50:
-		print("shoot!")
+		#print("shoot!")
+		pass
 	
 func phys_update(state_machine : ArcherFishSM):
 	pass
