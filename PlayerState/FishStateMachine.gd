@@ -1,6 +1,7 @@
 class_name FishStateMachine
 extends CharacterBody2D
 
+@export var health_manager : PlayerHealth
 @export var attack_area : AttackArea
 @export var fish_state : BaseFishState 
 @export var speed : float = 100
@@ -32,3 +33,8 @@ func lookat_mouse():
 
 func _on_attack_area_attack_hit():
 	fish_state.on_finish_charge(self)
+
+func take_hit(dir : Vector2):
+	if abs(dir.length()) <= 0:
+		pass
+	health_manager.take_damage()

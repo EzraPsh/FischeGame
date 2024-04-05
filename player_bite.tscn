@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1e3gvgum1yym"]
+
+[ext_resource type="Script" path="res://Projectiles/PlayerBite.gd" id="1_bkarl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aysbw"]
+
+[node name="PlayerBite" type="Area2D"]
+script = ExtResource("1_bkarl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_aysbw")

@@ -1,17 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://cu45kgvhbq8aw"]
+[gd_scene load_steps=5 format=3 uid="uid://cu45kgvhbq8aw"]
 
 [ext_resource type="Texture2D" uid="uid://tvt7lw41jfmk" path="res://icon.svg" id="1_cfksi"]
-[ext_resource type="Script" path="res://EnemyBullet.gd" id="1_fmi4f"]
+[ext_resource type="Script" path="res://Projectiles/EnemyBullet.gd" id="1_qy1m4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jgotc"]
-size = Vector2(12, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_34550"]
+size = Vector2(26, 26)
 
 [node name="Bullet" type="StaticBody2D"]
-script = ExtResource("1_fmi4f")
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_qy1m4")
 
 [node name="Icon" type="Sprite2D" parent="."]
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_cfksi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_jgotc")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_34550")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

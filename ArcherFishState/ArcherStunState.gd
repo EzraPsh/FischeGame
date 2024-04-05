@@ -18,7 +18,6 @@ func enter(state_machine : ArcherFishSM):
 	default_state.enter(state_machine)
 	
 func update(state_machine : ArcherFishSM):
-	print(state_machine.transform.x)
 	pass
 	
 func phys_update(state_machine : ArcherFishSM):

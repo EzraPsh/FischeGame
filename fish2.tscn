@@ -1,6 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://dboekm48xftm2"]
+[gd_scene load_steps=19 format=3 uid="uid://dboekm48xftm2"]
 
-[ext_resource type="Script" path="res://FishStateMachine.gd" id="1_mt0sw"]
+[ext_resource type="Script" path="res://PlayerState/FishStateMachine.gd" id="1_s740x"]
+[ext_resource type="Script" path="res://PlayerControllers/FishHealthManager.gd" id="2_52xcu"]
 [ext_resource type="Texture2D" uid="uid://tvt7lw41jfmk" path="res://icon.svg" id="2_ye4cb"]
 [ext_resource type="Script" path="res://PlayerState/FishMoveState.gd" id="3_64x47"]
 [ext_resource type="Script" path="res://PlayerState/FishDashState.gd" id="4_ssyw2"]
@@ -149,10 +150,31 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vfemr"]
 size = Vector2(30, 57)
 
-[node name="Fish" type="CharacterBody2D" node_paths=PackedStringArray("attack_area", "fish_state")]
-script = ExtResource("1_mt0sw")
+[node name="Fish" type="CharacterBody2D" node_paths=PackedStringArray("health_manager", "attack_area", "fish_state")]
+script = ExtResource("1_s740x")
+health_manager = NodePath("PlayerHealth")
 attack_area = NodePath("AttackArea")
 fish_state = NodePath("States/MoveState")
+
+[node name="PlayerHealth" type="Node" parent="."]
+script = ExtResource("2_52xcu")
+max_health = 5
+
+[node name="States" type="Node" parent="."]
+
+[node name="MoveState" type="Node" parent="States" node_paths=PackedStringArray("dash_state")]
+script = ExtResource("3_64x47")
+dash_state = NodePath("../DashState")
+
+[node name="DashState" type="Node" parent="States" node_paths=PackedStringArray("move_state")]
+script = ExtResource("4_ssyw2")
+move_state = NodePath("../MoveState")
+
+[node name="DashTimer" type="Timer" parent="States/DashState"]
+wait_time = 0.3
+
+[node name="DelayControl" type="Timer" parent="States/DashState"]
+wait_time = 0.15
 
 [node name="Icon" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.25)
@@ -172,22 +194,6 @@ parameters/conditions/attack = false
 libraries = {
 "": SubResource("AnimationLibrary_5s2fc")
 }
-
-[node name="States" type="Node" parent="."]
-
-[node name="MoveState" type="Node" parent="States" node_paths=PackedStringArray("dash_state")]
-script = ExtResource("3_64x47")
-dash_state = NodePath("../DashState")
-
-[node name="DashState" type="Node" parent="States" node_paths=PackedStringArray("move_state")]
-script = ExtResource("4_ssyw2")
-move_state = NodePath("../MoveState")
-
-[node name="DashTimer" type="Timer" parent="States/DashState"]
-wait_time = 0.3
-
-[node name="DelayControl" type="Timer" parent="States/DashState"]
-wait_time = 0.15
 
 [node name="AttackArea" type="Area2D" parent="."]
 collision_layer = 2

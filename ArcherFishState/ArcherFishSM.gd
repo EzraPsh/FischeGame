@@ -5,6 +5,7 @@ extends Destructable
 @export var speed : float = 100
 @export var fish : Node
 @export var bullet : PackedScene
+@onready var shoot_point : Node = $ShootPoint
 var look_dir : Vector2 = Vector2()
 var move_dir : Vector2 = Vector2()
 
@@ -19,11 +20,14 @@ func _process(delta):
 	fish_state.update(self)
 
 func lookat_player():
-	look_dir = lerp(look_dir, fish.global_position, 0.01)
+	look_dir = lerp(look_dir, fish.global_position, 0.05)
 	look_at(look_dir)
 
 func shoot():
-	print("shoot")
+	var instbul : Node = bullet.instantiate()
+	get_parent().add_child(instbul)
+	instbul.global_position = shoot_point.global_position
+	instbul.global_rotation = shoot_point.global_rotation
 	
 func slow_down_mult(mult : float):
 	move_dir = lerp(move_dir, Vector2(0,0), mult)

@@ -6,9 +6,9 @@ signal attack_hit
 var enabled : bool = false
 
 func _on_body_entered(body):
+	attack_hit.emit()
 	if enabled && body is Destructable:
 		body.take_hit(global_position)
-		attack_hit.emit()
 		enabled = false
 
 func reset():
