@@ -16,8 +16,10 @@ speed = 300.0
 
 [node name="Destructable" parent="." instance=ExtResource("2_e5a8t")]
 position = Vector2(220, -52)
-health = 5
+scale = Vector2(1, 1.01367)
+health = 10
 
 [node name="RigidBody2D" parent="." node_paths=PackedStringArray("fish") instance=ExtResource("3_psd5m")]
 position = Vector2(-26, 113)
+inertia = 1.0
 fish = NodePath("../Fish")

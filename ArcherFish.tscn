@@ -1,18 +1,105 @@
-[gd_scene load_steps=6 format=3 uid="uid://byq6cjju2jjl5"]
+[gd_scene load_steps=12 format=3 uid="uid://byq6cjju2jjl5"]
 
-[ext_resource type="Script" path="res://ArcherFishSM.gd" id="1_dj754"]
+[ext_resource type="Script" path="res://ArcherFishState/ArcherFishSM.gd" id="1_0p3dv"]
 [ext_resource type="Texture2D" uid="uid://tvt7lw41jfmk" path="res://icon.svg" id="1_dlggg"]
-[ext_resource type="PackedScene" uid="uid://cu45kgvhbq8aw" path="res://EnemyBullet.tscn" id="2_47h3l"]
+[ext_resource type="PackedScene" uid="uid://dirt8plkbfkvj" path="res://EnemyBullet.tscn" id="2_47h3l"]
 [ext_resource type="Script" path="res://ArcherFishState/ArcherDefaultState.gd" id="3_urnuk"]
+[ext_resource type="Script" path="res://ArcherFishState/ArcherStunState.gd" id="5_cta5x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7t8r5"]
 size = Vector2(64, 32)
+
+[sub_resource type="Animation" id="Animation_7mhiw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.807843, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_b2xp7"]
+resource_name = "attack_state"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.807843, 0, 0, 1), Color(0.807843, 0, 0, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"shoot"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_i8m3l"]
+resource_name = "idle_state"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.807843, 0, 0, 1), Color(0.807843, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_1ku51"]
+resource_name = "stun_state"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.807843, 0, 0, 1), Color(0.807843, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r77a3"]
+_data = {
+"RESET": SubResource("Animation_7mhiw"),
+"attack_state": SubResource("Animation_b2xp7"),
+"idle_state": SubResource("Animation_i8m3l"),
+"stun_state": SubResource("Animation_1ku51")
+}
 
 [node name="ArcherFish" type="RigidBody2D" node_paths=PackedStringArray("fish_state")]
 collision_layer = 3
 collision_mask = 3
 gravity_scale = 0.0
-script = ExtResource("1_dj754")
+script = ExtResource("1_0p3dv")
 fish_state = NodePath("State/ArcherDefault")
 bullet = ExtResource("2_47h3l")
 health = 3
@@ -25,10 +112,23 @@ texture = ExtResource("1_dlggg")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_7t8r5")
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="ShootPoint" type="Node2D" parent="."]
 position = Vector2(40, 0)
 
 [node name="State" type="Node" parent="."]
 
-[node name="ArcherDefault" type="Node" parent="State"]
+[node name="ArcherDefault" type="Node" parent="State" node_paths=PackedStringArray("archer_anim", "stun_state")]
 script = ExtResource("3_urnuk")
+archer_anim = NodePath("../../AnimationPlayer")
+stun_state = NodePath("../ArcherStun")
+
+[node name="ArcherStun" type="Node" parent="State" node_paths=PackedStringArray("default_state")]
+script = ExtResource("5_cta5x")
+default_state = NodePath("../ArcherDefault")
+
+[node name="StunTimer" type="Timer" parent="State/ArcherStun"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_r77a3")
+}
