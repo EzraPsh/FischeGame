@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://ArcherFishState/ArcherFishSM.gd" id="1_0p3dv"]
 [ext_resource type="Texture2D" uid="uid://tvt7lw41jfmk" path="res://icon.svg" id="1_dlggg"]
-[ext_resource type="PackedScene" uid="uid://cu45kgvhbq8aw" path="res://EnemyBullet.tscn" id="2_47h3l"]
+[ext_resource type="PackedScene" uid="uid://dirt8plkbfkvj" path="res://EnemyBullet.tscn" id="2_47h3l"]
 [ext_resource type="Script" path="res://ArcherFishState/ArcherDefaultState.gd" id="3_urnuk"]
 [ext_resource type="Script" path="res://ArcherFishState/ArcherStunState.gd" id="5_cta5x"]
 

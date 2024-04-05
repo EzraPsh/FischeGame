@@ -1,7 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://dboekm48xftm2"]
+[gd_scene load_steps=20 format=3 uid="uid://dboekm48xftm2"]
 
 [ext_resource type="Script" path="res://PlayerState/FishStateMachine.gd" id="1_s740x"]
 [ext_resource type="Script" path="res://PlayerControllers/FishHealthManager.gd" id="2_52xcu"]
+[ext_resource type="PackedScene" uid="uid://b1e3gvgum1yym" path="res://player_bite.tscn" id="2_hhnrh"]
 [ext_resource type="Texture2D" uid="uid://tvt7lw41jfmk" path="res://icon.svg" id="2_ye4cb"]
 [ext_resource type="Script" path="res://PlayerState/FishMoveState.gd" id="3_64x47"]
 [ext_resource type="Script" path="res://PlayerState/FishDashState.gd" id="4_ssyw2"]
@@ -155,6 +156,7 @@ script = ExtResource("1_s740x")
 health_manager = NodePath("PlayerHealth")
 attack_area = NodePath("AttackArea")
 fish_state = NodePath("States/MoveState")
+bite = ExtResource("2_hhnrh")
 
 [node name="PlayerHealth" type="Node" parent="."]
 script = ExtResource("2_52xcu")
@@ -175,6 +177,9 @@ wait_time = 0.3
 
 [node name="DelayControl" type="Timer" parent="States/DashState"]
 wait_time = 0.15
+
+[node name="AttackPoint" type="Node2D" parent="."]
+position = Vector2(48, 0)
 
 [node name="Icon" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.25)

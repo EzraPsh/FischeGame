@@ -24,7 +24,8 @@ func exit(state_machine : ArcherFishSM):
 	pass
 
 func take_hit(state_machine : ArcherFishSM, hitpos : Vector2):
-	var force_dir = (state_machine.global_position - hitpos).normalized()
-	state_machine.move_fish(force_dir * 10)
-	state_machine.fish_state = stun_state
-	stun_state.enter(state_machine)
+	if hitpos.length() > 0:
+		var force_dir = (state_machine.global_position - hitpos).normalized()
+		state_machine.move_fish(force_dir * 10)
+		state_machine.fish_state = stun_state
+		stun_state.enter(state_machine)

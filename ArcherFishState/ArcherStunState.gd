@@ -25,3 +25,7 @@ func phys_update(state_machine : ArcherFishSM):
 	
 func exit(state_machine : ArcherFishSM):
 	state_machine.look_dir = state_machine.transform.x
+
+func take_hit(state_machine : ArcherFishSM, hitpos : Vector2):
+	pass
+	

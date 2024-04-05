@@ -11,8 +11,8 @@ func update(state_machine : FishStateMachine):
 		state_machine.fish_state = dash_state
 		dash_state.enter(state_machine)
 		
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
-		print("Basic Attack!")
+	if Input.is_action_just_pressed("bite"):
+		state_machine.bite_attack()
 	
 func phys_update(state_machine : FishStateMachine):
 	if Input.get_vector("left", "right", "up", "down"):
