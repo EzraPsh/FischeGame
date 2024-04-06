@@ -12,3 +12,6 @@ func phys_update(state_machine : FishStateMachine):
 	
 func exit(state_machine : FishStateMachine):
 	pass
+
+func on_finish_charge(state_machine : FishStateMachine):
+	pass
