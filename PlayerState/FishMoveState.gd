@@ -2,6 +2,7 @@ class_name MoveState
 extends BaseFishState
 
 @export var dash_state : DashState
+@export var stun_state : FishStun
 
 func enter(state_machine : FishStateMachine):
 	pass
@@ -24,3 +25,11 @@ func phys_update(state_machine : FishStateMachine):
 	
 func exit(state_machine : FishStateMachine):
 	pass
+
+func take_hit(state_machine : FishStateMachine, dir : Vector2):
+	if abs(dir.length()) >= 0:
+		var force_dir = (state_machine.global_position - dir).normalized()
+		state_machine.move_fish_impulse(force_dir * 1000)
+		state_machine.fish_state = stun_state
+		stun_state.enter(state_machine)
+	state_machine.health_manager.take_damage()

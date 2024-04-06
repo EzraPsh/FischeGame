@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dboekm48xftm2"]
+[gd_scene load_steps=21 format=3 uid="uid://dboekm48xftm2"]
 
 [ext_resource type="Script" path="res://PlayerState/FishStateMachine.gd" id="1_s740x"]
 [ext_resource type="Script" path="res://PlayerControllers/FishHealthManager.gd" id="2_52xcu"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://tvt7lw41jfmk" path="res://icon.svg" id="2_ye4cb"]
 [ext_resource type="Script" path="res://PlayerState/FishMoveState.gd" id="3_64x47"]
 [ext_resource type="Script" path="res://PlayerState/FishDashState.gd" id="4_ssyw2"]
+[ext_resource type="Script" path="res://PlayerState/FishStunnedState.gd" id="5_nemtv"]
 [ext_resource type="Script" path="res://PlayerAttack.gd" id="5_ofji1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hwf3o"]
@@ -164,9 +165,17 @@ max_health = 5
 
 [node name="States" type="Node" parent="."]
 
-[node name="MoveState" type="Node" parent="States" node_paths=PackedStringArray("dash_state")]
+[node name="MoveState" type="Node" parent="States" node_paths=PackedStringArray("dash_state", "stun_state")]
 script = ExtResource("3_64x47")
 dash_state = NodePath("../DashState")
+stun_state = NodePath("../FishStun")
+
+[node name="FishStun" type="Node" parent="States" node_paths=PackedStringArray("default_state")]
+script = ExtResource("5_nemtv")
+default_state = NodePath("../MoveState")
+
+[node name="StunTimer" type="Timer" parent="States/FishStun"]
+wait_time = 0.5
 
 [node name="DashState" type="Node" parent="States" node_paths=PackedStringArray("move_state")]
 script = ExtResource("4_ssyw2")

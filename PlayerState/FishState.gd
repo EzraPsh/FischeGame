@@ -15,3 +15,6 @@ func exit(state_machine : FishStateMachine):
 
 func on_finish_charge(state_machine : FishStateMachine):
 	pass
+
+func take_hit(state_machine : FishStateMachine, dir : Vector2):
+	pass
