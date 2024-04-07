@@ -128,7 +128,7 @@ _data = {
 "stun_state": SubResource("Animation_1ku51")
 }
 
-[node name="ArcherFish" type="RigidBody2D" node_paths=PackedStringArray("fish_state")]
+[node name="ArcherFish" type="RigidBody2D" node_paths=PackedStringArray("fish_state") groups=["enemy"]]
 collision_layer = 2
 collision_mask = 3
 inertia = 1.0

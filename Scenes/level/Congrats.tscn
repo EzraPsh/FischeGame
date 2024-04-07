@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c7ypowvfchvqh"]
+
+[node name="Congrats" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 491.0
+offset_top = 202.0
+offset_right = 635.0
+offset_bottom = 228.0
+text = "Congrats you won!"
