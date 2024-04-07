@@ -27,7 +27,7 @@ func exit(state_machine : FishStateMachine):
 	pass
 
 func take_hit(state_machine : FishStateMachine, dir : Vector2):
-	if abs(dir.length()) >= 0:
+	if abs(dir.length()) > 0:
 		var force_dir = (state_machine.global_position - dir).normalized()
 		state_machine.move_fish_impulse(force_dir * 1000)
 		state_machine.fish_state = stun_state

@@ -1,12 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://cglid46uegmw1"]
+[gd_scene load_steps=8 format=3 uid="uid://cglid46uegmw1"]
 
-[ext_resource type="PackedScene" uid="uid://dboekm48xftm2" path="res://fish2.tscn" id="1_6f41m"]
-[ext_resource type="PackedScene" uid="uid://djuylkkukl2fq" path="res://Destructable.tscn" id="2_e5a8t"]
-[ext_resource type="Texture2D" uid="uid://tvt7lw41jfmk" path="res://icon.svg" id="3_35flv"]
-[ext_resource type="PackedScene" uid="uid://yi3puh0w07j8" path="res://knightfish.tscn" id="4_i1aa8"]
+[ext_resource type="PackedScene" uid="uid://dboekm48xftm2" path="res://fish2.tscn" id="1_homis"]
+[ext_resource type="PackedScene" uid="uid://djuylkkukl2fq" path="res://Destructable.tscn" id="2_pgokb"]
+[ext_resource type="Texture2D" uid="uid://tvt7lw41jfmk" path="res://icon.svg" id="3_ngpxe"]
+[ext_resource type="PackedScene" uid="uid://yi3puh0w07j8" path="res://knightfish.tscn" id="4_qn18y"]
+[ext_resource type="PackedScene" uid="uid://byq6cjju2jjl5" path="res://ArcherFish.tscn" id="5_4jgyi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ehcu4"]
-texture = ExtResource("3_35flv")
+texture = ExtResource("3_ngpxe")
 texture_region_size = Vector2i(32, 32)
 2:3/0 = 0
 2:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -28,11 +29,11 @@ position = Vector2(0, -1)
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.865, 0.865)
 
-[node name="Fish" parent="." instance=ExtResource("1_6f41m")]
+[node name="Fish" parent="." instance=ExtResource("1_homis")]
 position = Vector2(23, -35)
 speed = 300.0
 
-[node name="Destructable" parent="." instance=ExtResource("2_e5a8t")]
+[node name="Destructable" parent="." instance=ExtResource("2_pgokb")]
 position = Vector2(574, -293)
 scale = Vector2(1, 1.01367)
 health = 10
@@ -42,8 +43,12 @@ tile_set = SubResource("TileSet_hbc12")
 format = 2
 layer_0/tile_data = PackedInt32Array(-720917, 131072, 3, -655381, 131072, 3, -589845, 131072, 3, -524309, 131072, 3, -458773, 131072, 3, -393237, 131072, 3, -327701, 131072, 3, -262165, 131072, 3, -196629, 131072, 3, -131093, 131072, 3, -65557, 131072, 3, -21, 131072, 3, 65515, 131072, 3, 131051, 131072, 3, 196587, 131072, 3, 262123, 131072, 3, 327659, 131072, 3, 393195, 131072, 3, 458731, 131072, 3, 524267, 131072, 3, 589803, 131072, 3, 655339, 131072, 3, 720875, 131072, 3, 786411, 131072, 3, 786412, 131072, 3, 786413, 131072, 3, 786414, 131072, 3, 786415, 131072, 3, 786416, 131072, 3, 786417, 131072, 3, 786418, 131072, 3, 786419, 131072, 3, 786420, 131072, 3, 786421, 131072, 3, 786422, 131072, 3, 786423, 131072, 3, 786424, 131072, 3, 786425, 131072, 3, 786426, 131072, 3, 786427, 131072, 3, 786428, 131072, 3, 786429, 131072, 3, 786430, 131072, 3, 786431, 131072, 3, 720896, 131072, 3, 720897, 131072, 3, 720898, 131072, 3, 720899, 131072, 3, 720900, 131072, 3, 720901, 131072, 3, 720902, 131072, 3, 720903, 131072, 3, 720904, 131072, 3, 720905, 131072, 3, 720906, 131072, 3, 720907, 131072, 3, 720908, 131072, 3, 720909, 131072, 3, 720910, 131072, 3, 720911, 131072, 3, 720912, 131072, 3, 720913, 131072, 3, 720914, 131072, 3, 720915, 131072, 3, 720916, 131072, 3, -786412, 131072, 3, -720876, 131072, 3, -655340, 131072, 3, -589804, 131072, 3, -524268, 131072, 3, -458732, 131072, 3, -393196, 131072, 3, -327660, 131072, 3, -262124, 131072, 3, -196588, 131072, 3, -131052, 131072, 3, -65516, 131072, 3, 20, 131072, 3, 65556, 131072, 3, 131092, 131072, 3, 196628, 131072, 3, 262164, 131072, 3, 327700, 131072, 3, 393236, 131072, 3, 458772, 131072, 3, 524308, 131072, 3, 589844, 131072, 3, 655380, 131072, 3, -720916, 131072, 3, -720915, 131072, 3, -720914, 131072, 3, -720913, 131072, 3, -720912, 131072, 3, -720911, 131072, 3, -720910, 131072, 3, -720909, 131072, 3, -720908, 131072, 3, -720907, 131072, 3, -720906, 131072, 3, -720905, 131072, 3, -720904, 131072, 3, -720903, 131072, 3, -720902, 131072, 3, -720901, 131072, 3, -720900, 131072, 3, -720899, 131072, 3, -720898, 131072, 3, -720897, 131072, 3, -786432, 131072, 3, -786431, 131072, 3, -786430, 131072, 3, -786429, 131072, 3, -786428, 131072, 3, -786427, 131072, 3, -786426, 131072, 3, -786425, 131072, 3, -786424, 131072, 3, -786423, 131072, 3, -786422, 131072, 3, -786421, 131072, 3, -786420, 131072, 3, -786419, 131072, 3, -786418, 131072, 3, -786417, 131072, 3, -786416, 131072, 3, -786415, 131072, 3, -786414, 131072, 3, -786413, 131072, 3)
 
-[node name="knightfish" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_i1aa8")]
+[node name="knightfish" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_qn18y")]
 position = Vector2(-157, 144)
 inertia = 0.0
 target = NodePath("../Fish")
 speed = 3.0
+
+[node name="ArcherFish" parent="." node_paths=PackedStringArray("fish") instance=ExtResource("5_4jgyi")]
+position = Vector2(-222, -274)
+fish = NodePath("../Fish")
