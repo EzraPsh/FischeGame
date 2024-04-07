@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://cglid46uegmw1"]
+
+[ext_resource type="PackedScene" uid="uid://dboekm48xftm2" path="res://fish2.tscn" id="1_6f41m"]
+[ext_resource type="PackedScene" uid="uid://djuylkkukl2fq" path="res://Destructable.tscn" id="2_e5a8t"]
+[ext_resource type="Texture2D" uid="uid://tvt7lw41jfmk" path="res://icon.svg" id="3_35flv"]
+[ext_resource type="PackedScene" uid="uid://yi3puh0w07j8" path="res://knightfish.tscn" id="4_i1aa8"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ehcu4"]
+texture = ExtResource("3_35flv")
+texture_region_size = Vector2i(32, 32)
+2:3/0 = 0
+2:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:3/0/physics_layer_0/angular_velocity = 0.0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:2/0 = 0
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_hbc12"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_ehcu4")
+
+[node name="MainScene" type="Node2D"]
+position = Vector2(0, -1)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.865, 0.865)
+
+[node name="Fish" parent="." instance=ExtResource("1_6f41m")]
+position = Vector2(23, -35)
+speed = 300.0
+
+[node name="Destructable" parent="." instance=ExtResource("2_e5a8t")]
+position = Vector2(220, -52)
+scale = Vector2(1, 1.01367)
+health = 10
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_hbc12")
+format = 2
+layer_0/tile_data = PackedInt32Array(131061, 131072, 3, 196597, 131072, 3, 262133, 131072, 3, 327669, 131072, 3, 393205, 131072, 3, 458741, 131072, 3, 524277, 131072, 3, 65539, 131072, 3, 131075, 131072, 3, 196611, 131072, 3, 262147, 131072, 3, 327683, 131072, 3, 393219, 131072, 3, 458755, 131072, 3, 524291, 131072, 3)
+
+[node name="knightfish" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_i1aa8")]
+position = Vector2(-157, 144)
+target = NodePath("../Fish")
+speed = 3.0

@@ -38,9 +38,7 @@ func _on_attack_area_attack_hit():
 	fish_state.on_finish_charge(self)
 
 func take_hit(dir : Vector2):
-	if abs(dir.length()) <= 0:
-		pass
-	health_manager.take_damage()
+	fish_state.take_hit(self, dir)
 
 func bite_attack():
 	var bite_inst = bite.instantiate()
