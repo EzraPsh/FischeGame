@@ -5,7 +5,7 @@ extends BaseFishState
 @export var stun_state : FishStun
 
 func enter(state_machine : FishStateMachine):
-	pass
+	state_machine.anim.play("Idle")
 	
 func update(state_machine : FishStateMachine):
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):

@@ -4,6 +4,7 @@ extends Destructable
 @export var patrol_direction : Vector2
 @export var fish_state : KnightBase
 @export var target : Node2D
+@onready var anim : AnimationPlayer = $AnimationPlayer
 
 var move_dir : Vector2 = Vector2()
 @export var speed : float = 5

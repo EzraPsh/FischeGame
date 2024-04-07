@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dboekm48xftm2"]
+[gd_scene load_steps=46 format=3 uid="uid://dboekm48xftm2"]
 
 [ext_resource type="Script" path="res://PlayerState/FishStateMachine.gd" id="1_s740x"]
 [ext_resource type="Script" path="res://PlayerControllers/FishHealthManager.gd" id="2_52xcu"]
@@ -8,81 +8,57 @@
 [ext_resource type="Script" path="res://PlayerState/FishDashState.gd" id="4_ssyw2"]
 [ext_resource type="Script" path="res://PlayerState/FishStunnedState.gd" id="5_nemtv"]
 [ext_resource type="Script" path="res://PlayerAttack.gd" id="5_ofji1"]
+[ext_resource type="Texture2D" uid="uid://blwp3xioym5ut" path="res://Assets/PlayerFish/Idle/fish_ide_1.png" id="8_1qiki"]
+[ext_resource type="Script" path="res://upright.gd" id="8_mff3n"]
+[ext_resource type="Texture2D" uid="uid://cvi44bbwq5vrd" path="res://Assets/PlayerFish/Charge/fish_charge_1.png" id="8_yhtga"]
+[ext_resource type="Texture2D" uid="uid://bjlkxkw4f343l" path="res://Assets/PlayerFish/Charge/fish_charge_2.png" id="9_8ld3u"]
+[ext_resource type="Texture2D" uid="uid://crb0ie0wolnca" path="res://Assets/PlayerFish/Idle/fish_ide_2.png" id="9_ko8pq"]
+[ext_resource type="Texture2D" uid="uid://cxm1hi1smiuh6" path="res://Assets/PlayerFish/Charge/fish_charge_3.png" id="10_830jx"]
+[ext_resource type="Texture2D" uid="uid://dada0p3pgqjyx" path="res://Assets/PlayerFish/Idle/fish_ide_3.png" id="10_u7sk1"]
+[ext_resource type="Texture2D" uid="uid://bn4alwbntjb82" path="res://Assets/PlayerFish/Charge/fish_charge_4.png" id="11_000bh"]
+[ext_resource type="Texture2D" uid="uid://bupgwxd1xraoo" path="res://Assets/PlayerFish/Idle/fish_ide_4.png" id="11_ldip7"]
+[ext_resource type="Texture2D" uid="uid://oo5fhy3cua6o" path="res://Assets/PlayerFish/Charge/fish_charge_5.png" id="12_6ccld"]
+[ext_resource type="Texture2D" uid="uid://cau73l71vg07c" path="res://Assets/PlayerFish/Idle/fish_ide_5.png" id="12_xelbg"]
+[ext_resource type="Texture2D" uid="uid://nmqwfqgpeoad" path="res://Assets/PlayerFish/Charge/fish_charge_6.png" id="13_vb5ia"]
+[ext_resource type="Texture2D" uid="uid://lit4hjqxnrif" path="res://Assets/PlayerFish/Idle/fish_ide_7.png" id="13_vfatg"]
+[ext_resource type="Texture2D" uid="uid://dp0qnft31o338" path="res://Assets/PlayerFish/Charge/fish_charge_7.png" id="14_bfyfj"]
+[ext_resource type="Texture2D" uid="uid://c5vainfk4b70g" path="res://Assets/PlayerFish/Idle/fish_ide_6.png" id="14_sig40"]
+[ext_resource type="Texture2D" uid="uid://04gmdeuiqa1r" path="res://Assets/PlayerFish/Charge/fish_charge_8.png" id="15_3tw1u"]
+[ext_resource type="Texture2D" uid="uid://bkn6s12bs6aer" path="res://Assets/PlayerFish/Idle/fish_ide_8.png" id="15_uv1py"]
+[ext_resource type="Texture2D" uid="uid://5cxsa20r4uyx" path="res://Assets/PlayerFish/Idle/fish_ide_9.png" id="16_3n03h"]
+[ext_resource type="Texture2D" uid="uid://hyvodiv2slqn" path="res://Assets/PlayerFish/Charge/fish_charge_9.png" id="16_ws5vf"]
+[ext_resource type="Texture2D" uid="uid://bd371p5ahpics" path="res://Assets/PlayerFish/Idle/fish_ide_10.png" id="17_d3a1r"]
+[ext_resource type="Texture2D" uid="uid://dxqfpsn2sogov" path="res://Assets/PlayerFish/Charge/fish_charge_10.png" id="17_qdot2"]
+[ext_resource type="Texture2D" uid="uid://cl41xvum66q3x" path="res://Assets/PlayerFish/Idle/fish_ide_11.png" id="18_0topk"]
+[ext_resource type="Texture2D" uid="uid://cp27u4ci6o3ir" path="res://Assets/PlayerFish/Charge/fish_charge_11.png" id="18_f5sfu"]
+[ext_resource type="Texture2D" uid="uid://cwrmsuiho5vnl" path="res://Assets/PlayerFish/Charge/fish_charge_12.png" id="19_m251y"]
+[ext_resource type="Texture2D" uid="uid://bf8obxfmyne4g" path="res://Assets/PlayerFish/Idle/fish_ide_12.png" id="19_slmjr"]
+[ext_resource type="Texture2D" uid="uid://b6op8byvftnd4" path="res://Assets/PlayerFish/Charge/fish_charge_13.png" id="20_am02l"]
+[ext_resource type="Texture2D" uid="uid://cg1m0ahsf0ax7" path="res://Assets/PlayerFish/Idle/fish_ide_13.png" id="20_bvd4q"]
+[ext_resource type="Texture2D" uid="uid://beyh7elhyyjbb" path="res://Assets/PlayerFish/Charge/fish_charge_14.png" id="21_qpw1e"]
+[ext_resource type="Texture2D" uid="uid://5mwd5kuj31l7" path="res://Assets/PlayerFish/Idle/fish_ide_14.png" id="21_yaji5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hwf3o"]
 radius = 15.0
 height = 62.0
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ufdwg"]
-animation = &"Charge"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_idtdf"]
-animation = &"Move"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dbhyo"]
-switch_mode = 2
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_trpob"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_eeeae"]
-advance_mode = 2
-advance_condition = &"attack"
-
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ih232"]
-states/Charge/node = SubResource("AnimationNodeAnimation_ufdwg")
-states/Charge/position = Vector2(368, 17)
-states/Move/node = SubResource("AnimationNodeAnimation_idtdf")
-states/Move/position = Vector2(368, 100)
-transitions = ["Charge", "Move", SubResource("AnimationNodeStateMachineTransition_dbhyo"), "Start", "Move", SubResource("AnimationNodeStateMachineTransition_trpob"), "Move", "Charge", SubResource("AnimationNodeStateMachineTransition_eeeae")]
-graph_offset = Vector2(-12, -39)
+graph_offset = Vector2(125, -15)
 
 [sub_resource type="Animation" id="Animation_yqovi"]
 resource_name = "Charge"
-length = 0.5
+length = 1.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Icon:scale")
+tracks/0/path = NodePath("Icon:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0.5, 0.25), Vector2(0.625, 0.164063), Vector2(0.625, 0.164063), Vector2(0.5, 0.25)]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"values": [{
-"args": [],
-"method": &"charge_control"
-}, {
-"args": ["parameters/conditions/attack", false],
-"method": &"set_anim_cond"
-}]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [false],
-"method": &"move_set"
-}]
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("8_yhtga"), ExtResource("9_8ld3u"), ExtResource("10_830jx"), ExtResource("11_000bh"), ExtResource("12_6ccld"), ExtResource("13_vb5ia"), ExtResource("14_bfyfj"), ExtResource("15_3tw1u"), ExtResource("16_ws5vf"), ExtResource("17_qdot2"), ExtResource("18_f5sfu"), ExtResource("19_m251y"), ExtResource("20_am02l"), ExtResource("21_qpw1e")]
 }
 
 [sub_resource type="Animation" id="Animation_58x0r"]
@@ -129,22 +105,28 @@ tracks/0/keys = {
 "update": 1,
 "values": [ExtResource("2_ye4cb")]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Icon:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.5, 0.25)]
+
+[sub_resource type="Animation" id="Animation_83py1"]
+resource_name = "Idle"
+length = 1.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("8_1qiki"), ExtResource("9_ko8pq"), ExtResource("10_u7sk1"), ExtResource("11_ldip7"), ExtResource("12_xelbg"), ExtResource("13_vfatg"), ExtResource("14_sig40"), ExtResource("15_uv1py"), ExtResource("16_3n03h"), ExtResource("17_d3a1r"), ExtResource("18_0topk"), ExtResource("19_slmjr"), ExtResource("20_bvd4q"), ExtResource("21_yaji5")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5s2fc"]
 _data = {
 "Charge": SubResource("Animation_yqovi"),
+"Idle": SubResource("Animation_83py1"),
 "Move": SubResource("Animation_58x0r"),
 "RESET": SubResource("Animation_qieit")
 }
@@ -191,8 +173,9 @@ wait_time = 0.15
 position = Vector2(48, 0)
 
 [node name="Icon" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.25)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_ye4cb")
+script = ExtResource("8_mff3n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
@@ -201,8 +184,6 @@ shape = SubResource("CapsuleShape2D_hwf3o")
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_ih232")
 anim_player = NodePath("../AnimationPlayer")
-active = true
-parameters/conditions/attack = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

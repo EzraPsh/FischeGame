@@ -6,6 +6,8 @@ extends BaseFishState
 @onready var momentary_delay : Timer = $DelayControl
 
 func enter(state_machine : FishStateMachine):
+	state_machine.anim.play("Charge")
+	
 	state_machine.move_fish_impulse(state_machine.transform.x * 1800)
 	state_machine.attack_area.enable()
 	
@@ -16,6 +18,7 @@ func enter(state_machine : FishStateMachine):
 	
 	exit(state_machine)
 	state_machine.fish_state = move_state
+	move_state.enter(state_machine)
 	
 func update(state_machine : FishStateMachine):
 	pass
@@ -37,4 +40,3 @@ func on_finish_charge(state_machine : FishStateMachine):
 	exit(state_machine)
 	state_machine.fish_state = move_state
 	move_state.enter(state_machine)
-	print("change")
