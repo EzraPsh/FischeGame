@@ -6,6 +6,7 @@ var curr_dir = Vector2()
 @export var stun_state : KnightBase
 
 func enter(state_machine : KnightFishSM):
+	state_machine.anim.play("Idle")
 	curr_dir = state_machine.patrol_direction
 	state_machine.transform.x = curr_dir
 	

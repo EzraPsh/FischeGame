@@ -1,10 +1,42 @@
-[gd_scene load_steps=12 format=3 uid="uid://byq6cjju2jjl5"]
+[gd_scene load_steps=44 format=3 uid="uid://byq6cjju2jjl5"]
 
 [ext_resource type="Script" path="res://ArcherFishState/ArcherFishSM.gd" id="1_0p3dv"]
-[ext_resource type="Texture2D" uid="uid://tvt7lw41jfmk" path="res://icon.svg" id="1_dlggg"]
 [ext_resource type="PackedScene" uid="uid://dirt8plkbfkvj" path="res://EnemyBullet.tscn" id="2_47h3l"]
+[ext_resource type="Texture2D" uid="uid://dn7eejothvouo" path="res://Assets/ArcherFish/idle/archer_idle_1.png" id="3_a3eqr"]
 [ext_resource type="Script" path="res://ArcherFishState/ArcherDefaultState.gd" id="3_urnuk"]
+[ext_resource type="Script" path="res://upright.gd" id="4_cfm67"]
 [ext_resource type="Script" path="res://ArcherFishState/ArcherStunState.gd" id="5_cta5x"]
+[ext_resource type="Texture2D" uid="uid://dc285g0g2ci3q" path="res://Assets/ArcherFish/idle/archer_idle_2.png" id="6_rnyk5"]
+[ext_resource type="Texture2D" uid="uid://jkrctwyesmwe" path="res://Assets/ArcherFish/idle/archer_idle_3.png" id="7_ke7ud"]
+[ext_resource type="Texture2D" uid="uid://b8f18dkw5ufd" path="res://Assets/ArcherFish/Attack/archer_attack_3.png" id="8_2wehc"]
+[ext_resource type="Texture2D" uid="uid://b4s1k8qrwgxtd" path="res://Assets/ArcherFish/idle/archer_idle_4.png" id="8_ysexk"]
+[ext_resource type="Texture2D" uid="uid://culttclgx7e18" path="res://Assets/ArcherFish/Attack/archer_attack_4.png" id="9_o6liw"]
+[ext_resource type="Texture2D" uid="uid://bwmyvprksw7g7" path="res://Assets/ArcherFish/idle/archer_idle_5.png" id="9_wk45l"]
+[ext_resource type="Texture2D" uid="uid://brehs1gfp8dnq" path="res://Assets/ArcherFish/idle/archer_idle_6.png" id="10_3aykh"]
+[ext_resource type="Texture2D" uid="uid://bxswvwn6wmbrf" path="res://Assets/ArcherFish/Attack/archer_attack_7.png" id="10_um5qu"]
+[ext_resource type="Texture2D" uid="uid://d026kf7lgylgd" path="res://Assets/ArcherFish/Attack/archer_attack_5.png" id="11_01bdr"]
+[ext_resource type="Texture2D" uid="uid://dwf13qb7qgn4k" path="res://Assets/ArcherFish/idle/archer_idle_8.png" id="11_wwdhr"]
+[ext_resource type="Texture2D" uid="uid://6qs0p1f62aqo" path="res://Assets/ArcherFish/Attack/archer_attack_6.png" id="12_23aat"]
+[ext_resource type="Texture2D" uid="uid://rcxj8sngi2lb" path="res://Assets/ArcherFish/idle/archer_idle_7.png" id="12_qaeyg"]
+[ext_resource type="Texture2D" uid="uid://cb5fsn0nsjg3b" path="res://Assets/ArcherFish/idle/archer_idle_9.png" id="13_gxq15"]
+[ext_resource type="Texture2D" uid="uid://dxnasv7m3ptjy" path="res://Assets/ArcherFish/Attack/archer_attack_8.png" id="13_vl1rk"]
+[ext_resource type="Texture2D" uid="uid://d1ku66imswwt4" path="res://Assets/ArcherFish/idle/archer_idle_10.png" id="14_goxfi"]
+[ext_resource type="Texture2D" uid="uid://bbv5jlkgqx427" path="res://Assets/ArcherFish/idle/archer_idle_11.png" id="15_k5ufl"]
+[ext_resource type="Texture2D" uid="uid://8a3j7jl4nbrw" path="res://Assets/ArcherFish/idle/archer_idle_12.png" id="16_ddgx6"]
+[ext_resource type="Texture2D" uid="uid://bksf7gj7bwecm" path="res://Assets/ArcherFish/idle/archer_idle_13.png" id="17_ffq4n"]
+[ext_resource type="Texture2D" uid="uid://da1esivp88jsj" path="res://Assets/ArcherFish/idle/archer_idle_14.png" id="18_2g5j2"]
+[ext_resource type="Texture2D" uid="uid://gek4bfq85adl" path="res://Assets/ArcherFish/stun/archer_stunned_3.png" id="27_shu5c"]
+[ext_resource type="Texture2D" uid="uid://cxaerlsdm2yg7" path="res://Assets/ArcherFish/stun/archer_stunned_4.png" id="28_ayk68"]
+[ext_resource type="Texture2D" uid="uid://cdtjhgo02j0ii" path="res://Assets/ArcherFish/stun/archer_stunned_5.png" id="29_28pbl"]
+[ext_resource type="Texture2D" uid="uid://bmmv4tsm37ees" path="res://Assets/ArcherFish/stun/archer_stunned_6.png" id="30_uudvl"]
+[ext_resource type="Texture2D" uid="uid://buljaxlstv50v" path="res://Assets/ArcherFish/stun/archer_stunned_7.png" id="31_jb2ag"]
+[ext_resource type="Texture2D" uid="uid://dyjkf3kmb8o4c" path="res://Assets/ArcherFish/stun/archer_stunned_8.png" id="32_yoao1"]
+[ext_resource type="Texture2D" uid="uid://i74hlpfqi0xv" path="res://Assets/ArcherFish/stun/archer_stunned_9.png" id="33_lbmeb"]
+[ext_resource type="Texture2D" uid="uid://ddn8bnatu6225" path="res://Assets/ArcherFish/stun/archer_stunned_10.png" id="34_cnamw"]
+[ext_resource type="Texture2D" uid="uid://bngmag3vc0p6u" path="res://Assets/ArcherFish/stun/archer_stunned_11.png" id="35_j0u53"]
+[ext_resource type="Texture2D" uid="uid://miaywpvwp8c1" path="res://Assets/ArcherFish/stun/archer_stunned_12.png" id="36_q04q3"]
+[ext_resource type="Texture2D" uid="uid://cgs0mwvfejd1h" path="res://Assets/ArcherFish/stun/archer_stunned_13.png" id="37_4yiaq"]
+[ext_resource type="Texture2D" uid="uid://c0ay5p6bjdjl" path="res://Assets/ArcherFish/stun/archer_stunned_14.png" id="38_v8rf3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7t8r5"]
 size = Vector2(64, 32)
@@ -14,38 +46,27 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Icon:modulate")
+tracks/0/path = NodePath("Icon:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.807843, 0, 0, 1)]
+"update": 1,
+"values": [ExtResource("3_a3eqr")]
 }
 
 [sub_resource type="Animation" id="Animation_b2xp7"]
 resource_name = "attack_state"
+length = 0.7
 loop_mode = 1
-tracks/0/type = "value"
+tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Icon:modulate")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0.807843, 0, 0, 1), Color(0.807843, 0, 0, 1)]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -53,38 +74,50 @@ tracks/1/keys = {
 "method": &"shoot"
 }]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Icon:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("8_2wehc"), ExtResource("10_um5qu"), ExtResource("9_o6liw"), ExtResource("11_01bdr"), ExtResource("12_23aat"), ExtResource("13_vl1rk")]
+}
 
 [sub_resource type="Animation" id="Animation_i8m3l"]
 resource_name = "idle_state"
-length = 5.0
+length = 1.3
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Icon:modulate")
+tracks/0/path = NodePath("Icon:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0.807843, 0, 0, 1), Color(0.807843, 0, 0, 1)]
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_a3eqr"), ExtResource("6_rnyk5"), ExtResource("7_ke7ud"), ExtResource("8_ysexk"), ExtResource("9_wk45l"), ExtResource("10_3aykh"), ExtResource("11_wwdhr"), ExtResource("12_qaeyg"), ExtResource("13_gxq15"), ExtResource("14_goxfi"), ExtResource("15_k5ufl"), ExtResource("16_ddgx6"), ExtResource("17_ffq4n"), ExtResource("18_2g5j2")]
 }
 
 [sub_resource type="Animation" id="Animation_1ku51"]
 resource_name = "stun_state"
-length = 5.0
+length = 1.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Icon:modulate")
+tracks/0/path = NodePath("Icon:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0.807843, 0, 0, 1), Color(0.807843, 0, 0, 1)]
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("27_shu5c"), ExtResource("28_ayk68"), ExtResource("29_28pbl"), ExtResource("30_uudvl"), ExtResource("31_jb2ag"), ExtResource("32_yoao1"), ExtResource("33_lbmeb"), ExtResource("34_cnamw"), ExtResource("35_j0u53"), ExtResource("36_q04q3"), ExtResource("37_4yiaq"), ExtResource("38_v8rf3")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_r77a3"]
@@ -96,7 +129,7 @@ _data = {
 }
 
 [node name="ArcherFish" type="RigidBody2D" node_paths=PackedStringArray("fish_state")]
-collision_layer = 3
+collision_layer = 2
 collision_mask = 3
 inertia = 1.0
 gravity_scale = 0.0
@@ -106,9 +139,9 @@ bullet = ExtResource("2_47h3l")
 health = 3
 
 [node name="Icon" type="Sprite2D" parent="."]
-modulate = Color(0.807843, 0, 0, 1)
-scale = Vector2(0.5, 0.25)
-texture = ExtResource("1_dlggg")
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_a3eqr")
+script = ExtResource("4_cfm67")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_7t8r5")
@@ -123,8 +156,9 @@ script = ExtResource("3_urnuk")
 archer_anim = NodePath("../../AnimationPlayer")
 stun_state = NodePath("../ArcherStun")
 
-[node name="ArcherStun" type="Node" parent="State" node_paths=PackedStringArray("default_state")]
+[node name="ArcherStun" type="Node" parent="State" node_paths=PackedStringArray("archer_anim", "default_state")]
 script = ExtResource("5_cta5x")
+archer_anim = NodePath("../../AnimationPlayer")
 default_state = NodePath("../ArcherDefault")
 
 [node name="StunTimer" type="Timer" parent="State/ArcherStun"]

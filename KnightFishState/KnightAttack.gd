@@ -17,6 +17,7 @@ func enter(state_machine : KnightFishSM):
 	delay_pre_charge.start()
 	await delay_pre_charge.timeout
 	
+	state_machine.anim.play("Attack")
 	state_machine.look_at(state_machine.target.global_position)
 	
 	state_machine.move_fish_impulse(state_machine.transform.x * 40)

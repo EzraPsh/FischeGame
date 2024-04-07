@@ -9,6 +9,8 @@ extends CharacterBody2D
 @export var bite : PackedScene 
 @onready var atack_point : Node = $AttackPoint
 
+@onready var anim : AnimationPlayer = $AnimationPlayer
+
 func _ready():
 	fish_state.enter(self)
 	

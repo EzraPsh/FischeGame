@@ -1,10 +1,49 @@
-[gd_scene load_steps=8 format=3 uid="uid://yi3puh0w07j8"]
+[gd_scene load_steps=52 format=3 uid="uid://yi3puh0w07j8"]
 
 [ext_resource type="Script" path="res://KnightFishState/KnighFishSM.gd" id="1_erkjs"]
-[ext_resource type="Texture2D" uid="uid://tvt7lw41jfmk" path="res://icon.svg" id="1_wri20"]
 [ext_resource type="Script" path="res://KnightFishState/KnightPatrol.gd" id="3_s7eh3"]
 [ext_resource type="Script" path="res://KnightFishState/KnightAttack.gd" id="4_5ltmd"]
 [ext_resource type="Script" path="res://KnightFishState/KnightStunned.gd" id="5_6nqon"]
+[ext_resource type="Texture2D" uid="uid://djw73tlvtnwoj" path="res://Assets/KnightFish/Idle/knight_idle_1.png" id="5_fuifu"]
+[ext_resource type="Texture2D" uid="uid://bvo7p2xm6y8as" path="res://Assets/KnightFish/Idle/knight_idle_2.png" id="6_q0vi1"]
+[ext_resource type="Script" path="res://upright.gd" id="6_sqju4"]
+[ext_resource type="Texture2D" uid="uid://1c0w1gnnpx55" path="res://Assets/KnightFish/Idle/knight_idle_3.png" id="7_bly7h"]
+[ext_resource type="Texture2D" uid="uid://ddkf7qh0mk8qb" path="res://Assets/KnightFish/Idle/knight_idle_4.png" id="8_svxcf"]
+[ext_resource type="Texture2D" uid="uid://1lagmpira4ch" path="res://Assets/KnightFish/Idle/knight_idle_5.png" id="9_11bq1"]
+[ext_resource type="Texture2D" uid="uid://d3ja1icww48wo" path="res://Assets/KnightFish/Idle/knight_idle_6.png" id="10_gqs35"]
+[ext_resource type="Texture2D" uid="uid://cqmu22hbr7kre" path="res://Assets/KnightFish/Idle/knight_idle_7.png" id="11_pr62u"]
+[ext_resource type="Texture2D" uid="uid://c7o8sj48g5m4v" path="res://Assets/KnightFish/Idle/knight_idle_8.png" id="12_avx6j"]
+[ext_resource type="Texture2D" uid="uid://cex6xeydwswfk" path="res://Assets/KnightFish/Idle/knight_idle_9.png" id="13_ldqu8"]
+[ext_resource type="Texture2D" uid="uid://bwoovlg4ssusj" path="res://Assets/KnightFish/Idle/knight_idle_10.png" id="14_6wfve"]
+[ext_resource type="Texture2D" uid="uid://bci0cwqb782nx" path="res://Assets/KnightFish/Idle/knight_idle_11.png" id="15_ypxy0"]
+[ext_resource type="Texture2D" uid="uid://ixovftrelnuy" path="res://Assets/KnightFish/Idle/knight_idle_12.png" id="16_eggh6"]
+[ext_resource type="Texture2D" uid="uid://dnv65k60ye4ri" path="res://Assets/KnightFish/Idle/knight_idle_13.png" id="17_gfv4f"]
+[ext_resource type="Texture2D" uid="uid://bvt7hudhmski2" path="res://Assets/KnightFish/Idle/knight_idle_14.png" id="18_eivfk"]
+[ext_resource type="Texture2D" uid="uid://boua7kpjkf8ja" path="res://Assets/KnightFish/Attack/knight_charge_1.png" id="19_67n8j"]
+[ext_resource type="Texture2D" uid="uid://dwceotivdiihs" path="res://Assets/KnightFish/Attack/knight_charge_2.png" id="20_3ivdq"]
+[ext_resource type="Texture2D" uid="uid://bvqus2mf0tl0o" path="res://Assets/KnightFish/Attack/knight_charge_3.png" id="21_4g0dy"]
+[ext_resource type="Texture2D" uid="uid://da4u84ufk138m" path="res://Assets/KnightFish/Attack/knight_charge_4.png" id="22_6n33m"]
+[ext_resource type="Texture2D" uid="uid://cqdavn2l43hau" path="res://Assets/KnightFish/Attack/knight_charge_5.png" id="23_psxnm"]
+[ext_resource type="Texture2D" uid="uid://dpfp21yn3ymvs" path="res://Assets/KnightFish/Attack/knight_charge_6.png" id="24_sku3k"]
+[ext_resource type="Texture2D" uid="uid://bck68h5pexgrm" path="res://Assets/KnightFish/Attack/knight_charge_7.png" id="25_8fbnf"]
+[ext_resource type="Texture2D" uid="uid://cx3vo8d4uyd3v" path="res://Assets/KnightFish/Attack/knight_charge_8.png" id="26_xq5i0"]
+[ext_resource type="Texture2D" uid="uid://dhwvx0wc6r78b" path="res://Assets/KnightFish/Attack/knight_charge_9.png" id="27_675x4"]
+[ext_resource type="Texture2D" uid="uid://oajtqjqfjr43" path="res://Assets/KnightFish/Attack/knight_charge_10.png" id="28_oqmsc"]
+[ext_resource type="Texture2D" uid="uid://cx6p8u8fwmne" path="res://Assets/KnightFish/Attack/knight_charge_11.png" id="29_4osky"]
+[ext_resource type="Texture2D" uid="uid://c5v2d8xfdyimt" path="res://Assets/KnightFish/Attack/knight_charge_12.png" id="30_qe11n"]
+[ext_resource type="Texture2D" uid="uid://b6xixxvasuget" path="res://Assets/KnightFish/Attack/knight_charge_13.png" id="31_vcnwn"]
+[ext_resource type="Texture2D" uid="uid://b6bhxhiyjqmnt" path="res://Assets/KnightFish/Attack/knight_charge_14.png" id="32_4558g"]
+[ext_resource type="Texture2D" uid="uid://dtd3b61ovg4q6" path="res://Assets/KnightFish/Stun/knight_stunned_1.png" id="33_qeicn"]
+[ext_resource type="Texture2D" uid="uid://dtg3ps81rlfw6" path="res://Assets/KnightFish/Stun/knight_stunned_2.png" id="34_w4vlv"]
+[ext_resource type="Texture2D" uid="uid://q4vxqhhlwuui" path="res://Assets/KnightFish/Stun/knight_stunned_3.png" id="35_mwwn2"]
+[ext_resource type="Texture2D" uid="uid://dutritwn58fd3" path="res://Assets/KnightFish/Stun/knight_stunned_4.png" id="36_shgy5"]
+[ext_resource type="Texture2D" uid="uid://brgnmgahsji4u" path="res://Assets/KnightFish/Stun/knight_stunned_5.png" id="37_31wi2"]
+[ext_resource type="Texture2D" uid="uid://b8y6pwi0u7u2g" path="res://Assets/KnightFish/Stun/knight_stunned_6.png" id="38_e80ji"]
+[ext_resource type="Texture2D" uid="uid://dttkhqyigmreq" path="res://Assets/KnightFish/Stun/knight_stunned_7.png" id="39_72gay"]
+[ext_resource type="Texture2D" uid="uid://brsga7lc15grc" path="res://Assets/KnightFish/Stun/knight_stunned_8.png" id="40_wnjnl"]
+[ext_resource type="Texture2D" uid="uid://bpdbae2amjfu" path="res://Assets/KnightFish/Stun/knight_stunned_9.png" id="41_e0cwx"]
+[ext_resource type="Texture2D" uid="uid://cxki8b7pxsyd8" path="res://Assets/KnightFish/Stun/knight_stunned_10.png" id="42_r0qsa"]
+[ext_resource type="Texture2D" uid="uid://berwdwtxoaljt" path="res://Assets/KnightFish/Stun/knight_stunned_11.png" id="43_ee3jn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2kqji"]
 size = Vector2(64, 32)
@@ -12,8 +51,79 @@ size = Vector2(64, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7pvej"]
 size = Vector2(28.5, 44)
 
+[sub_resource type="Animation" id="Animation_kvb0n"]
+resource_name = "Idle"
+length = 1.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("5_fuifu"), ExtResource("6_q0vi1"), ExtResource("7_bly7h"), ExtResource("8_svxcf"), ExtResource("9_11bq1"), ExtResource("10_gqs35"), ExtResource("11_pr62u"), ExtResource("12_avx6j"), ExtResource("13_ldqu8"), ExtResource("14_6wfve"), ExtResource("15_ypxy0"), ExtResource("16_eggh6"), ExtResource("17_gfv4f"), ExtResource("18_eivfk")]
+}
+
+[sub_resource type="Animation" id="Animation_jhymc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_fuifu")]
+}
+
+[sub_resource type="Animation" id="Animation_g3sud"]
+resource_name = "Attack"
+length = 1.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("19_67n8j"), ExtResource("20_3ivdq"), ExtResource("21_4g0dy"), ExtResource("22_6n33m"), ExtResource("23_psxnm"), ExtResource("24_sku3k"), ExtResource("25_8fbnf"), ExtResource("26_xq5i0"), ExtResource("27_675x4"), ExtResource("28_oqmsc"), ExtResource("29_4osky"), ExtResource("30_qe11n"), ExtResource("31_vcnwn"), ExtResource("32_4558g")]
+}
+
+[sub_resource type="Animation" id="Animation_4w8lu"]
+resource_name = "Stun"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("33_qeicn"), ExtResource("34_w4vlv"), ExtResource("35_mwwn2"), ExtResource("36_shgy5"), ExtResource("37_31wi2"), ExtResource("38_e80ji"), ExtResource("39_72gay"), ExtResource("40_wnjnl"), ExtResource("41_e0cwx"), ExtResource("42_r0qsa"), ExtResource("43_ee3jn")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_74d88"]
+_data = {
+"Attack": SubResource("Animation_g3sud"),
+"Idle": SubResource("Animation_kvb0n"),
+"RESET": SubResource("Animation_jhymc"),
+"Stun": SubResource("Animation_4w8lu")
+}
+
 [node name="knightfish" type="RigidBody2D" node_paths=PackedStringArray("fish_state")]
-collision_layer = 3
+collision_layer = 2
 collision_mask = 3
 inertia = 1.0
 gravity_scale = 0.0
@@ -21,21 +131,6 @@ script = ExtResource("1_erkjs")
 patrol_direction = Vector2(1, 0)
 fish_state = NodePath("State/KnightPatrol")
 health = 5
-
-[node name="Icon" type="Sprite2D" parent="."]
-modulate = Color(0.243137, 0.376471, 1, 1)
-scale = Vector2(0.5, 0.25)
-texture = ExtResource("1_wri20")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_2kqji")
-
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(44, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(3, 0)
-shape = SubResource("RectangleShape2D_7pvej")
 
 [node name="State" type="Node" parent="."]
 
@@ -59,5 +154,25 @@ script = ExtResource("5_6nqon")
 default_state = NodePath("../KnightPatrol")
 
 [node name="StunTimer" type="Timer" parent="State/KnightStun"]
+
+[node name="Icon" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_fuifu")
+script = ExtResource("6_sqju4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2kqji")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(44, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(3, 0)
+shape = SubResource("RectangleShape2D_7pvej")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_74d88")
+}
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

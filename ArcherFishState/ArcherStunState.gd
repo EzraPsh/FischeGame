@@ -1,10 +1,12 @@
 class_name ArcherStun
 extends BaseArcherState
 
+@export var archer_anim : AnimationPlayer
 @export var default_state : ArcherDefault
 @onready var stun_timer : Timer = $StunTimer
 
 func enter(state_machine : ArcherFishSM):
+	archer_anim.play("stun_state")
 	
 	stun_timer.stop()
 	stun_timer.start()

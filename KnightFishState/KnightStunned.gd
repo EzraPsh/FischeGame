@@ -5,6 +5,7 @@ extends KnightBase
 @onready var stun_timer : Timer = $StunTimer
 
 func enter(state_machine : KnightFishSM):
+	state_machine.anim.play("Stun")
 	
 	stun_timer.stop()
 	stun_timer.start()
