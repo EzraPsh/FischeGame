@@ -1,0 +1,68 @@
+[gd_scene load_steps=12 format=3 uid="uid://lli70onw7meu"]
+
+[ext_resource type="Script" path="res://Scenes/SceneManager.gd" id="1_cd66d"]
+[ext_resource type="Texture2D" uid="uid://cctmxkkafavwu" path="res://Assets/background_4.png" id="1_q7v4v"]
+[ext_resource type="PackedScene" uid="uid://dboekm48xftm2" path="res://fish2.tscn" id="1_qyn7g"]
+[ext_resource type="PackedScene" uid="uid://i1lvd8jcjvhr" path="res://camera_with_ui.tscn" id="2_yqsl6"]
+[ext_resource type="Texture2D" uid="uid://br5t0k5uke6cu" path="res://Assets/Tile.png" id="3_0hlm0"]
+[ext_resource type="PackedScene" uid="uid://yi3puh0w07j8" path="res://knightfish.tscn" id="4_rbsj6"]
+[ext_resource type="PackedScene" uid="uid://rj4e62kld51r" path="res://Door.tscn" id="5_gqx1t"]
+[ext_resource type="PackedScene" uid="uid://br6b4ouc60dfh" path="res://BossTest.tscn" id="6_bt8n8"]
+[ext_resource type="PackedScene" uid="uid://byq6cjju2jjl5" path="res://ArcherFish.tscn" id="7_uprnu"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r7ewe"]
+texture = ExtResource("3_0hlm0")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSet" id="TileSet_ctwgc"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 3
+physics_layer_0/collision_mask = 3
+sources/0 = SubResource("TileSetAtlasSource_r7ewe")
+
+[node name="Level4Scene" type="Node2D"]
+script = ExtResource("1_cd66d")
+
+[node name="Background4" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.392157)
+scale = Vector2(0.672222, 0.672222)
+texture = ExtResource("1_q7v4v")
+
+[node name="Fish" parent="." node_paths=PackedStringArray("health_ui") instance=ExtResource("1_qyn7g")]
+position = Vector2(-13, 26)
+speed = 300.0
+health_ui = NodePath("../MainCam")
+
+[node name="MainCam" parent="." instance=ExtResource("2_yqsl6")]
+zoom = Vector2(0.88, 0.88)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_ctwgc")
+format = 2
+layer_0/tile_data = PackedInt32Array(-720917, 0, 0, -655381, 0, 0, -589845, 0, 0, -524309, 0, 0, -458773, 0, 0, -393237, 0, 0, -327701, 0, 0, -262165, 0, 0, -196629, 0, 0, -131093, 0, 0, -65557, 0, 0, -21, 0, 0, 65515, 0, 0, 131051, 0, 0, 196587, 0, 0, 262123, 0, 0, 327659, 0, 0, 393195, 0, 0, 458731, 0, 0, 524267, 0, 0, 589803, 0, 0, 655339, 0, 0, 720875, 0, 0, 786411, 0, 0, 786412, 0, 0, 786413, 0, 0, 786414, 0, 0, 786415, 0, 0, 786416, 0, 0, 786417, 0, 0, 786418, 0, 0, 786419, 0, 0, 786420, 0, 0, 786421, 0, 0, 786422, 0, 0, 786423, 0, 0, 786424, 0, 0, 786425, 0, 0, 786426, 0, 0, 786427, 0, 0, 786428, 0, 0, 786429, 0, 0, 786430, 0, 0, 786431, 0, 0, 720896, 0, 0, 720897, 0, 0, 720898, 0, 0, 720899, 0, 0, 720900, 0, 0, 720901, 0, 0, 720902, 0, 0, 720903, 0, 0, 720904, 0, 0, 720905, 0, 0, 720906, 0, 0, 720907, 0, 0, 720908, 0, 0, 720909, 0, 0, 720910, 0, 0, 720911, 0, 0, 720912, 0, 0, 720913, 0, 0, 720914, 0, 0, 720915, 0, 0, 720916, 0, 0, -786412, 0, 0, -720876, 0, 0, -655340, 0, 0, -589804, 0, 0, -524268, 0, 0, -458732, 0, 0, -393196, 0, 0, -327660, 0, 0, -262124, 0, 0, -196588, 0, 0, -131052, 0, 0, -65516, 0, 0, 20, 0, 0, 65556, 0, 0, 131092, 0, 0, 196628, 0, 0, 262164, 0, 0, 327700, 0, 0, 393236, 0, 0, 458772, 0, 0, 524308, 0, 0, 589844, 0, 0, 655380, 0, 0, -720916, 0, 0, -720915, 0, 0, -720914, 0, 0, -720913, 0, 0, -720912, 0, 0, -720911, 0, 0, -720910, 0, 0, -720909, 0, 0, -720908, 0, 0, -720907, 0, 0, -720906, 0, 0, -720905, 0, 0, -720904, 0, 0, -720903, 0, 0, -720902, 0, 0, -720901, 0, 0, -720900, 0, 0, -720899, 0, 0, -720898, 0, 0, -720897, 0, 0, -786432, 0, 0, -786431, 0, 0, -786430, 0, 0, -786429, 0, 0, -786428, 0, 0, -786427, 0, 0, -786426, 0, 0, -786425, 0, 0, -786424, 0, 0, -786423, 0, 0, -786422, 0, 0, -786421, 0, 0, -786420, 0, 0, -786419, 0, 0, -786418, 0, 0, -786417, 0, 0, -786416, 0, 0, -786415, 0, 0, -786414, 0, 0, -786413, 0, 0)
+
+[node name="knightfish" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_rbsj6")]
+position = Vector2(-427, 6)
+patrol_direction = Vector2(0, 1)
+target = NodePath("../Fish")
+
+[node name="knightfish2" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_rbsj6")]
+position = Vector2(356, -3)
+patrol_direction = Vector2(0, 1)
+target = NodePath("../Fish")
+
+[node name="Door" parent="." instance=ExtResource("5_gqx1t")]
+position = Vector2(586, 1)
+next_scene = ExtResource("6_bt8n8")
+
+[node name="ArcherFish" parent="." node_paths=PackedStringArray("fish") instance=ExtResource("7_uprnu")]
+position = Vector2(598, 151)
+fish = NodePath("../Fish")
+
+[node name="ArcherFish2" parent="." node_paths=PackedStringArray("fish") instance=ExtResource("7_uprnu")]
+position = Vector2(-569, 159)
+fish = NodePath("../Fish")

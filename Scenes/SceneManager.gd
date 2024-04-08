@@ -4,6 +4,7 @@ func _ready() -> void:
 	for node in get_tree().get_nodes_in_group('door'):
 		node.hide()
 		node.process_mode = 4
+	
 
 
 func _process(delta: float) -> void:

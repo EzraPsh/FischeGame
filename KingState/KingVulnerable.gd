@@ -24,7 +24,11 @@ func phys_update(state_machine : KingSM):
 	pass
 	
 func exit(state_machine : KingSM):
+	vulnerable_time.stop()
 	pass
 
 func take_hit(state_machine : KingSM, hitpos : Vector2) -> bool:
+	exit(state_machine)
+	state_machine.fish_state = default_state
+	default_state.enter(state_machine)
 	return true
