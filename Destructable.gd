@@ -7,3 +7,4 @@ func take_hit(hitpos : Vector2):
 	health -= 1
 	if health <= 0:
 		queue_free()
+	print(health)

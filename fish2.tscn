@@ -61,6 +61,23 @@ tracks/0/keys = {
 "values": [ExtResource("8_yhtga"), ExtResource("9_8ld3u"), ExtResource("10_830jx"), ExtResource("11_000bh"), ExtResource("12_6ccld"), ExtResource("13_vb5ia"), ExtResource("14_bfyfj"), ExtResource("15_3tw1u"), ExtResource("16_ws5vf"), ExtResource("17_qdot2"), ExtResource("18_f5sfu"), ExtResource("19_m251y"), ExtResource("20_am02l"), ExtResource("21_qpw1e")]
 }
 
+[sub_resource type="Animation" id="Animation_83py1"]
+resource_name = "Idle"
+length = 1.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("8_1qiki"), ExtResource("9_ko8pq"), ExtResource("10_u7sk1"), ExtResource("11_ldip7"), ExtResource("12_xelbg"), ExtResource("13_vfatg"), ExtResource("14_sig40"), ExtResource("15_uv1py"), ExtResource("16_3n03h"), ExtResource("17_d3a1r"), ExtResource("18_0topk"), ExtResource("19_slmjr"), ExtResource("20_bvd4q"), ExtResource("21_yaji5")]
+}
+
 [sub_resource type="Animation" id="Animation_58x0r"]
 resource_name = "Move"
 loop_mode = 1
@@ -104,23 +121,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [ExtResource("2_ye4cb")]
-}
-
-[sub_resource type="Animation" id="Animation_83py1"]
-resource_name = "Idle"
-length = 1.4
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Icon:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("8_1qiki"), ExtResource("9_ko8pq"), ExtResource("10_u7sk1"), ExtResource("11_ldip7"), ExtResource("12_xelbg"), ExtResource("13_vfatg"), ExtResource("14_sig40"), ExtResource("15_uv1py"), ExtResource("16_3n03h"), ExtResource("17_d3a1r"), ExtResource("18_0topk"), ExtResource("19_slmjr"), ExtResource("20_bvd4q"), ExtResource("21_yaji5")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5s2fc"]

@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://i1lvd8jcjvhr"]
+
+[ext_resource type="Script" path="res://UIUpdate.gd" id="1_q5dwe"]
+[ext_resource type="Texture2D" uid="uid://tvt7lw41jfmk" path="res://icon.svg" id="2_qry2a"]
+
+[node name="Camera2D" type="Camera2D"]
+script = ExtResource("1_q5dwe")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 577.0
+offset_bottom = 135.0
+
+[node name="Heart" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+texture = ExtResource("2_qry2a")
+stretch_mode = 1
