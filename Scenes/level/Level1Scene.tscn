@@ -1,11 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://jwprrnpsh1fo"]
+[gd_scene load_steps=12 format=3 uid="uid://jwprrnpsh1fo"]
 
 [ext_resource type="Script" path="res://Scenes/SceneManager.gd" id="1_hmkq3"]
 [ext_resource type="PackedScene" uid="uid://dboekm48xftm2" path="res://fish2.tscn" id="2_lx53y"]
+[ext_resource type="Texture2D" uid="uid://br5t0k5uke6cu" path="res://Assets/Tile.png" id="4_ey27i"]
 [ext_resource type="Texture2D" uid="uid://tvt7lw41jfmk" path="res://icon.svg" id="4_sw8qn"]
 [ext_resource type="PackedScene" uid="uid://rj4e62kld51r" path="res://Door.tscn" id="6_7ueed"]
 [ext_resource type="PackedScene" uid="uid://cnxym6anhhnf" path="res://Scenes/level/Level3Scene.tscn" id="6_n2hfp"]
 [ext_resource type="PackedScene" uid="uid://byq6cjju2jjl5" path="res://ArcherFish.tscn" id="6_r2gms"]
+[ext_resource type="PackedScene" uid="uid://i1lvd8jcjvhr" path="res://camera_with_ui.tscn" id="7_c2t07"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ehcu4"]
 texture = ExtResource("4_sw8qn")
@@ -18,18 +20,23 @@ texture_region_size = Vector2i(32, 32)
 2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:2/0/physics_layer_0/angular_velocity = 0.0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4g3jr"]
+texture = ExtResource("4_ey27i")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+
 [sub_resource type="TileSet" id="TileSet_hbc12"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 255
 physics_layer_0/collision_mask = 255
 sources/0 = SubResource("TileSetAtlasSource_ehcu4")
+sources/1 = SubResource("TileSetAtlasSource_4g3jr")
 
 [node name="MainScene" type="Node2D"]
 position = Vector2(0, -1)
 script = ExtResource("1_hmkq3")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.865, 0.865)
 
 [node name="Fish" parent="." instance=ExtResource("2_lx53y")]
 position = Vector2(23, -35)
@@ -47,3 +54,6 @@ fish = NodePath("../Fish")
 [node name="DoorLeft" parent="." instance=ExtResource("6_7ueed")]
 position = Vector2(-593, -2)
 next_scene = ExtResource("6_n2hfp")
+
+[node name="MainCam" parent="." instance=ExtResource("7_c2t07")]
+zoom = Vector2(0.88, 0.88)

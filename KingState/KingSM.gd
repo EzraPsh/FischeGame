@@ -7,14 +7,12 @@ extends Destructable
 @export var shark : PackedScene
 @onready var anim : AnimationPlayer = $AnimationPlayer
 var pos_init : Vector2 = Vector2()
-#@onready var anim : AnimationPlayer = $AnimationPlayer
 
 func _ready():
 	fish_state.enter(self)
 	pos_init = global_position
 	
 func _physics_process(delta):
-	#global_position = pos_init
 	fish_state.phys_update(self)
 	
 func _process(delta):

@@ -14,6 +14,8 @@ func set_health_ui(ui : UIManager):
 func take_damage():
 	curr_health -= 1
 	health_ui.change_size(curr_health)
+	if !is_alive():
+		get_tree().change_scene_to_file("res://lose.tscn")
 	
-func is_alive() -> int:
+func is_alive() -> bool:
 	return curr_health > 0

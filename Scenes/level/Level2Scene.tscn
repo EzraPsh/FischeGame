@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://chwi7tjkwh2gx"]
+[gd_scene load_steps=10 format=3 uid="uid://chwi7tjkwh2gx"]
 
 [ext_resource type="Script" path="res://Scenes/SceneManager.gd" id="1_naaf5"]
 [ext_resource type="PackedScene" uid="uid://dboekm48xftm2" path="res://fish2.tscn" id="2_ye52p"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://yi3puh0w07j8" path="res://knightfish.tscn" id="5_2vcqq"]
 [ext_resource type="PackedScene" uid="uid://rj4e62kld51r" path="res://Door.tscn" id="6_827fl"]
 [ext_resource type="PackedScene" uid="uid://cnxym6anhhnf" path="res://Scenes/level/Level3Scene.tscn" id="6_nkkle"]
+[ext_resource type="PackedScene" uid="uid://i1lvd8jcjvhr" path="res://camera_with_ui.tscn" id="7_hrloy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ehcu4"]
 texture = ExtResource("4_4eqhh")
@@ -27,9 +28,6 @@ sources/0 = SubResource("TileSetAtlasSource_ehcu4")
 [node name="MainScene" type="Node2D"]
 position = Vector2(0, -1)
 script = ExtResource("1_naaf5")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.865, 0.865)
 
 [node name="Fish" parent="." instance=ExtResource("2_ye52p")]
 position = Vector2(23, -35)
@@ -57,3 +55,6 @@ target = NodePath("../Fish")
 [node name="knightfish3" parent="." node_paths=PackedStringArray("target") instance=ExtResource("5_2vcqq")]
 position = Vector2(37, -165)
 target = NodePath("../Fish")
+
+[node name="MainCam" parent="." instance=ExtResource("7_hrloy")]
+zoom = Vector2(0.88, 0.88)
