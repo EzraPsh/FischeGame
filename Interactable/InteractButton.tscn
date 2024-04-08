@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://b114rb3n5dny6"]
 
-[ext_resource type="Texture2D" uid="uid://tvt7lw41jfmk" path="res://icon.svg" id="1_dq7ek"]
+[ext_resource type="Texture2D" uid="uid://c7n66okskmrwm" path="res://Assets/e.png" id="1_u7ous"]
 
 [node name="InteractButton" type="Sprite2D"]
-scale = Vector2(0.3125, 0.3125)
-texture = ExtResource("1_dq7ek")
+scale = Vector2(0.124, 0.124)
+texture = ExtResource("1_u7ous")

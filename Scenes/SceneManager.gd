@@ -8,6 +8,7 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	print(get_tree().get_nodes_in_group('enemy').size())
 	if get_tree().get_nodes_in_group('enemy').size() == 0:
 		for node in get_tree().get_nodes_in_group('door'):
 			node.show()

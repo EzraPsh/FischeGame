@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://by6xhqjy210o6"]
+[gd_scene load_steps=4 format=3 uid="uid://bbxed3y0kcgr1"]
 
 [ext_resource type="Script" path="res://changescene.gd" id="1_bk2r1"]
 [ext_resource type="FontFile" uid="uid://b4uyryit2a47f" path="res://Assets/Fonts/medieval-times-font/MedievalTimes-AL7l6.ttf" id="2_j0tei"]
@@ -7,6 +7,12 @@
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_bk2r1")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -598.0
+offset_top = -379.0
+offset_right = 638.0
+offset_bottom = 419.0
+
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Label" type="Label" parent="."]
@@ -14,9 +20,10 @@ offset_left = -109.0
 offset_top = -147.0
 offset_right = 460.0
 offset_bottom = 32.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_j0tei")
 theme_override_font_sizes/font_size = 136
-text = "Fish Game"
+text = "Dark Fish"
 horizontal_alignment = 1
 vertical_alignment = 1
 
