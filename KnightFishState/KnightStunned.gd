@@ -32,4 +32,4 @@ func front_entered(state_machine : KnightFishSM, body : Node2D):
 	pass
 
 func take_hit(state_machine : KnightFishSM, hitpos : Vector2):
-	pass
+	return true

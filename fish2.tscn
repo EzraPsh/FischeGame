@@ -205,6 +205,7 @@ shape = SubResource("RectangleShape2D_vfemr")
 
 [node name="Dash" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("38_qf53a")
+volume_db = -5.0
 
 [node name="Bite" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("39_3gw5o")
