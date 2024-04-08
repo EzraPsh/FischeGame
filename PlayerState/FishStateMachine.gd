@@ -5,6 +5,7 @@ extends CharacterBody2D
 @export var attack_area : AttackArea
 @export var fish_state : BaseFishState 
 @export var speed : float = 100
+@export var health_ui : UIManager
 
 @export var bite : PackedScene 
 @onready var atack_point : Node = $AttackPoint
@@ -13,6 +14,7 @@ extends CharacterBody2D
 
 func _ready():
 	fish_state.enter(self)
+	health_manager.set_health_ui(health_ui)
 	
 func _physics_process(delta):
 	fish_state.phys_update(self)
@@ -47,4 +49,3 @@ func bite_attack():
 	atack_point.add_child(bite_inst)
 	bite_inst.global_position = atack_point.global_position
 	bite_inst.global_rotation = atack_point.global_rotation
-	pass

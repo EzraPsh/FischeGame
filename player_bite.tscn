@@ -6,6 +6,7 @@
 size = Vector2(56, 54)
 
 [node name="PlayerBite" type="Area2D"]
+collision_mask = 3
 script = ExtResource("1_bkarl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

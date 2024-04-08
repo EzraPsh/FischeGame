@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://cglid46uegmw1"]
+[gd_scene load_steps=13 format=3 uid="uid://cglid46uegmw1"]
 
 [ext_resource type="Script" path="res://Scenes/SceneManager.gd" id="1_1n1yj"]
 [ext_resource type="PackedScene" uid="uid://dboekm48xftm2" path="res://fish2.tscn" id="1_homis"]
+[ext_resource type="PackedScene" uid="uid://i1lvd8jcjvhr" path="res://camera_with_ui.tscn" id="2_2x3l1"]
 [ext_resource type="PackedScene" uid="uid://djuylkkukl2fq" path="res://Destructable.tscn" id="2_pgokb"]
 [ext_resource type="Texture2D" uid="uid://tvt7lw41jfmk" path="res://icon.svg" id="3_ngpxe"]
 [ext_resource type="PackedScene" uid="uid://yi3puh0w07j8" path="res://knightfish.tscn" id="4_qn18y"]
@@ -31,12 +32,13 @@ sources/0 = SubResource("TileSetAtlasSource_ehcu4")
 position = Vector2(0, -1)
 script = ExtResource("1_1n1yj")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.865, 0.865)
+[node name="Camera2D" parent="." instance=ExtResource("2_2x3l1")]
+zoom = Vector2(0.85, 0.85)
 
-[node name="Fish" parent="." instance=ExtResource("1_homis")]
+[node name="Fish" parent="." node_paths=PackedStringArray("health_ui") instance=ExtResource("1_homis")]
 position = Vector2(23, -35)
 speed = 300.0
+health_ui = NodePath("../Camera2D")
 
 [node name="Destructable" parent="." instance=ExtResource("2_pgokb")]
 position = Vector2(574, -293)
