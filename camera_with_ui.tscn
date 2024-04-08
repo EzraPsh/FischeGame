@@ -13,8 +13,9 @@ layout_mode = 3
 anchors_preset = 0
 offset_left = 56.0
 offset_top = 54.0
-offset_right = 633.0
+offset_right = 632.0
 offset_bottom = 189.0
+scale = Vector2(0.605, 0.605)
 
 [node name="Heart" type="TextureRect" parent="CanvasLayer/Control"]
 layout_mode = 0

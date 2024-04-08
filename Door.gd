@@ -6,6 +6,9 @@ var button_icon : Sprite2D = null
 var is_in_range = false
 var prev_label : Label = null
 
+func _ready():
+	$AnimationPlayer.play("Vortex")
+
 func _input(event: InputEvent) -> void:
 	var just_pressed = event.is_pressed() and not event.is_echo()
 	if Input.is_key_pressed(KEY_E) and just_pressed and is_in_range :

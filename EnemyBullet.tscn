@@ -9,7 +9,7 @@
 size = Vector2(26, 26)
 
 [node name="Bullet" type="StaticBody2D"]
-collision_layer = 4
+collision_layer = 8
 collision_mask = 4
 script = ExtResource("1_qy1m4")
 

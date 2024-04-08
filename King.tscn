@@ -108,7 +108,7 @@ gravity_scale = 0.0
 freeze = true
 script = ExtResource("1_3ikp7")
 fish_state = NodePath("State/KingIdle")
-health = 5
+health = 3
 
 [node name="Icon" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
@@ -140,7 +140,7 @@ summon_state = NodePath("../KingSummon")
 stun_state = NodePath("../KingVulnerable")
 
 [node name="WaitTimer" type="Timer" parent="State/KingIdle"]
-wait_time = 4.0
+wait_time = 3.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

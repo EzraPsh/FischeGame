@@ -22,6 +22,8 @@ func enter(state_machine : KingSM):
 	wait_interval.start()
 	await wait_interval.timeout
 	
+	#summon_state.timer_mult = summon_state.timer_mult / curr_summon_time
+	
 	exit(state_machine)
 	state_machine.fish_state = summon_state
 	summon_state.enter(state_machine)
