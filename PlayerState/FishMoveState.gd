@@ -3,6 +3,7 @@ extends BaseFishState
 
 @export var dash_state : DashState
 @export var stun_state : FishStun
+@export var bite_sound : AudioStreamPlayer2D
 
 func enter(state_machine : FishStateMachine):
 	state_machine.anim.play("Idle")
@@ -14,6 +15,7 @@ func update(state_machine : FishStateMachine):
 		
 	if Input.is_action_just_pressed("bite"):
 		state_machine.bite_attack()
+		bite_sound.play()
 	
 func phys_update(state_machine : FishStateMachine):
 	if Input.get_vector("left", "right", "up", "down"):

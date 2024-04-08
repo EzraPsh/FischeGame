@@ -7,6 +7,7 @@ var is_attacking : bool = false
 @export var stun_state : KnightStun
 @onready var delay_pre_charge : Timer = $PreAttack
 @onready var charge_time : Timer = $ChargeTimer
+@export var dash : AudioStreamPlayer2D
 
 func enter(state_machine : KnightFishSM):
 	is_attacking = false
@@ -18,6 +19,7 @@ func enter(state_machine : KnightFishSM):
 	await delay_pre_charge.timeout
 	
 	state_machine.anim.play("Attack")
+	dash.play()
 	state_machine.look_at(state_machine.target.global_position)
 	
 	state_machine.move_fish_impulse(state_machine.transform.x * 40)
