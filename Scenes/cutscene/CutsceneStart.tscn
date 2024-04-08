@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://cc2pvu7w2c8tg"]
+
+[ext_resource type="Script" path="res://Scenes/cutscene/CutsceneStart.gd" id="1_x7q3m"]
+[ext_resource type="Texture2D" uid="uid://dlh10sgy8j3ce" path="res://Assets/cutscene/2_human-no.png" id="2_1ndfu"]
+[ext_resource type="Texture2D" uid="uid://c5u4u31lo3cja" path="res://Assets/cutscene/1_human-yes.png" id="2_rbdah"]
+[ext_resource type="Texture2D" uid="uid://bbig1gl4sfrqu" path="res://Assets/cutscene/3_preach.png" id="3_rjt6t"]
+[ext_resource type="Texture2D" uid="uid://wqp7o1xcyv0k" path="res://Assets/cutscene/4_king.png" id="4_goyap"]
+[ext_resource type="Texture2D" uid="uid://d1ynjg57214i5" path="res://Assets/cutscene/5_liberty.png" id="5_1rb7c"]
+
+[node name="CutsceneStart" type="Node2D"]
+script = ExtResource("1_x7q3m")
+strings = Array[String](["It’s been so long that it’s practically forgotten…", "The warmth once shown by the divine protectors…", "The care once given by our masters…", "No more to be seen, to be felt, to be believed in…", "The preacher continued to pray..", "Foolishly holding on  to an empty promise of a decrepit old king.. ", "A deceitful king who lied and hid the true salvation…", "He will not bind us any longer", "Rise, brothers and sisters!", "Our salvation comes not from waiting, it comes from action!", "Our masters, our protectors are no more,", "Our king and royal brethren, once wise and trusted, are no more,", "If we are to escape this hellish place, if we are to reach the promised blue free sea, ", "then we must fight!", "King or not, mighty or not, just as our kin dies, so will the king!", "Their sacrifice will guide our efforts, their memories will light our path, their corpse will fuel our wrath!", "No more shall a fish be slain for ‘population control’, no more shall their bodies be defiled to be our meat!", "Swim ever upward! The hell that is our life ends here today!", "The deep blue sea that we long dreamt of will come!"])
+image2 = ExtResource("2_1ndfu")
+image3 = ExtResource("3_rjt6t")
+image4 = ExtResource("4_goyap")
+image5 = ExtResource("5_1rb7c")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -590.0
+offset_top = -334.0
+offset_right = 593.0
+offset_bottom = 330.0
+color = Color(0, 0, 0, 1)
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -164)
+scale = Vector2(0.146875, 0.146875)
+texture = ExtResource("2_rbdah")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -456.0
+offset_top = 48.0
+offset_right = 455.0
+offset_bottom = 208.0
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Label"]
+layout_mode = 0
+offset_left = 413.0
+offset_top = 214.0
+offset_right = 499.0
+offset_bottom = 240.0
+text = "Continue"
+
+[connection signal="pressed" from="Label/Button" to="." method="_on_button_pressed"]
