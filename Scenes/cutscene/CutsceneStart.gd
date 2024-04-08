@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 
 func _on_button_pressed() -> void:
 	if strings.size() == counter:
-		get_tree().change_scene_to_file('res://Scenes/MainScene.tscn')
+		get_tree().change_scene_to_file('res://Scenes/level/Level1Scene.tscn')
 		return  # move to the main scene
 	$Label.text = strings[counter]
 	if counter == 2:

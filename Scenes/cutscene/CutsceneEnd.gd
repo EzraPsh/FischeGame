@@ -11,7 +11,8 @@ func _process(delta: float) -> void:
 
 func _on_button_pressed() -> void:
 	if strings.size() == counter:
-		return  # move to the main scene
+		get_tree().change_scene_to_file("res://Scenes/Win.tscn")
+		return
 	$Label.text = strings[counter]
 	if counter == 11:
 		$Sprite.texture = image2

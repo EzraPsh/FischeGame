@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://epu4aqkucvcj" path="res://King.tscn" id="4_500j0"]
 [ext_resource type="PackedScene" uid="uid://llg355l3y8f" path="res://shark.tscn" id="5_padud"]
 [ext_resource type="PackedScene" uid="uid://rj4e62kld51r" path="res://Door.tscn" id="8_rb7d1"]
-[ext_resource type="PackedScene" uid="uid://ct7r8aa8y5pqo" path="res://Scenes/Win.tscn" id="9_eq1c5"]
+[ext_resource type="PackedScene" uid="uid://7bi702bmo5w3" path="res://Scenes/cutscene/CutsceneEnd.tscn" id="10_ro0wu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_thej6"]
 texture = ExtResource("1_ud6og")
@@ -110,4 +110,4 @@ shark = ExtResource("5_padud")
 
 [node name="Door" parent="." instance=ExtResource("8_rb7d1")]
 position = Vector2(537, -5)
-next_scene = ExtResource("9_eq1c5")
+next_scene = ExtResource("10_ro0wu")
