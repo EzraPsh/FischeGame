@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dirt8plkbfkvj"]
 
-[ext_resource type="Texture2D" uid="uid://tvt7lw41jfmk" path="res://icon.svg" id="1_cfksi"]
 [ext_resource type="Script" path="res://Projectiles/EnemyBullet.gd" id="1_qy1m4"]
+[ext_resource type="Texture2D" uid="uid://np7yer527ke7" path="res://Assets/ArcherFish/Proj/proj_1.png" id="2_ja5cw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jgotc"]
 
@@ -14,8 +14,9 @@ collision_mask = 4
 script = ExtResource("1_qy1m4")
 
 [node name="Icon" type="Sprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_cfksi")
+position = Vector2(-4.76837e-07, -4.76837e-07)
+scale = Vector2(0.8125, 0.8125)
+texture = ExtResource("2_ja5cw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_jgotc")

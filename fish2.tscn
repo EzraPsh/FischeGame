@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://dboekm48xftm2"]
+[gd_scene load_steps=48 format=3 uid="uid://dboekm48xftm2"]
 
 [ext_resource type="Script" path="res://PlayerState/FishStateMachine.gd" id="1_s740x"]
 [ext_resource type="Script" path="res://PlayerControllers/FishHealthManager.gd" id="2_52xcu"]
@@ -37,6 +37,8 @@
 [ext_resource type="Texture2D" uid="uid://cg1m0ahsf0ax7" path="res://Assets/PlayerFish/Idle/fish_ide_13.png" id="20_bvd4q"]
 [ext_resource type="Texture2D" uid="uid://beyh7elhyyjbb" path="res://Assets/PlayerFish/Charge/fish_charge_14.png" id="21_qpw1e"]
 [ext_resource type="Texture2D" uid="uid://5mwd5kuj31l7" path="res://Assets/PlayerFish/Idle/fish_ide_14.png" id="21_yaji5"]
+[ext_resource type="AudioStream" uid="uid://btemxl7ksnfrk" path="res://Assets/Audio/water_fast_4.wav" id="38_qf53a"]
+[ext_resource type="AudioStream" uid="uid://cbv73thc738qs" path="res://Assets/Audio/munchin.wav" id="39_3gw5o"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hwf3o"]
 radius = 15.0
@@ -147,10 +149,11 @@ max_health = 5
 
 [node name="States" type="Node" parent="."]
 
-[node name="MoveState" type="Node" parent="States" node_paths=PackedStringArray("dash_state", "stun_state")]
+[node name="MoveState" type="Node" parent="States" node_paths=PackedStringArray("dash_state", "stun_state", "bite_sound")]
 script = ExtResource("3_64x47")
 dash_state = NodePath("../DashState")
 stun_state = NodePath("../FishStun")
+bite_sound = NodePath("../../Bite")
 
 [node name="FishStun" type="Node" parent="States" node_paths=PackedStringArray("default_state")]
 script = ExtResource("5_nemtv")
@@ -159,9 +162,10 @@ default_state = NodePath("../MoveState")
 [node name="StunTimer" type="Timer" parent="States/FishStun"]
 wait_time = 0.5
 
-[node name="DashState" type="Node" parent="States" node_paths=PackedStringArray("move_state")]
+[node name="DashState" type="Node" parent="States" node_paths=PackedStringArray("move_state", "dash_sound")]
 script = ExtResource("4_ssyw2")
 move_state = NodePath("../MoveState")
+dash_sound = NodePath("../../Dash")
 
 [node name="DashTimer" type="Timer" parent="States/DashState"]
 wait_time = 0.3
@@ -198,6 +202,13 @@ script = ExtResource("5_ofji1")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
 position = Vector2(48, 0)
 shape = SubResource("RectangleShape2D_vfemr")
+
+[node name="Dash" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("38_qf53a")
+volume_db = -5.0
+
+[node name="Bite" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("39_3gw5o")
 
 [connection signal="attack_hit" from="AttackArea" to="." method="_on_attack_area_attack_hit"]
 [connection signal="body_entered" from="AttackArea" to="AttackArea" method="_on_body_entered"]

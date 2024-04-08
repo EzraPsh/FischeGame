@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://llg355l3y8f"]
+[gd_scene load_steps=16 format=3 uid="uid://llg355l3y8f"]
 
 [ext_resource type="Texture2D" uid="uid://dtume1r4tds2i" path="res://Assets/KingSpawn/shark_1.png" id="1_ed8ac"]
 [ext_resource type="Script" path="res://KingSummon.gd" id="1_h06la"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dq4ffhcsihlsn" path="res://Assets/KingSpawn/shark_6.png" id="6_pvri7"]
 [ext_resource type="Texture2D" uid="uid://by277k5ckw7m" path="res://Assets/KingSpawn/shark_7.png" id="7_h6qbl"]
 [ext_resource type="Texture2D" uid="uid://deht3k2herpc5" path="res://Assets/KingSpawn/shark_8.png" id="8_3xm7h"]
+[ext_resource type="AudioStream" uid="uid://dkycv4bfori0s" path="res://Assets/Audio/spin_woosh_underwater_1.wav" id="10_62e8q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xesc"]
 
@@ -172,5 +173,8 @@ monitoring = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(20, 8.5)
 shape = SubResource("RectangleShape2D_o5j52")
+
+[node name="Summon" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_62e8q")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

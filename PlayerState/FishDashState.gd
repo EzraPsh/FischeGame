@@ -4,9 +4,11 @@ extends BaseFishState
 @export var move_state : MoveState
 @onready var dash_len : Timer = $DashTimer
 @onready var momentary_delay : Timer = $DelayControl
+@export var dash_sound : AudioStreamPlayer2D
 
 func enter(state_machine : FishStateMachine):
 	state_machine.anim.play("Charge")
+	dash_sound.play()
 	
 	state_machine.move_fish_impulse(state_machine.transform.x * 1800)
 	state_machine.attack_area.enable()

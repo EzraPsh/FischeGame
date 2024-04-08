@@ -6,7 +6,7 @@ var toggle_aim : bool = true
 
 func _ready():
 	$AnimationPlayer.play("shark")
-	
+	$Summon.play()
 	target = get_parent().get_node("Fish")
 
 func forward():

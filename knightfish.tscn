@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://yi3puh0w07j8"]
+[gd_scene load_steps=53 format=3 uid="uid://yi3puh0w07j8"]
 
 [ext_resource type="Script" path="res://KnightFishState/KnighFishSM.gd" id="1_erkjs"]
 [ext_resource type="Script" path="res://KnightFishState/KnightPatrol.gd" id="3_s7eh3"]
@@ -44,6 +44,7 @@
 [ext_resource type="Texture2D" uid="uid://bpdbae2amjfu" path="res://Assets/KnightFish/Stun/knight_stunned_9.png" id="41_e0cwx"]
 [ext_resource type="Texture2D" uid="uid://cxki8b7pxsyd8" path="res://Assets/KnightFish/Stun/knight_stunned_10.png" id="42_r0qsa"]
 [ext_resource type="Texture2D" uid="uid://berwdwtxoaljt" path="res://Assets/KnightFish/Stun/knight_stunned_11.png" id="43_ee3jn"]
+[ext_resource type="AudioStream" uid="uid://btemxl7ksnfrk" path="res://Assets/Audio/water_fast_4.wav" id="45_867qw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2kqji"]
 size = Vector2(64, 32)
@@ -139,10 +140,11 @@ script = ExtResource("3_s7eh3")
 charge_state = NodePath("../KnightAttack")
 stun_state = NodePath("../KnightStun")
 
-[node name="KnightAttack" type="Node" parent="State" node_paths=PackedStringArray("patrol_state", "stun_state")]
+[node name="KnightAttack" type="Node" parent="State" node_paths=PackedStringArray("patrol_state", "stun_state", "dash")]
 script = ExtResource("4_5ltmd")
 patrol_state = NodePath("../KnightPatrol")
 stun_state = NodePath("../KnightStun")
+dash = NodePath("../../AudioStreamPlayer2D")
 
 [node name="PreAttack" type="Timer" parent="State/KnightAttack"]
 
@@ -174,5 +176,8 @@ shape = SubResource("RectangleShape2D_7pvej")
 libraries = {
 "": SubResource("AnimationLibrary_74d88")
 }
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("45_867qw")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

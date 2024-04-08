@@ -23,8 +23,7 @@ func _physics_process(delta):
 func _process(delta):
 	fish_state.update(self)
 
-func move_fish(dir : Vector2):
-	velocity = lerp(velocity, dir, 0.2)
+func move_fish(dir : Vector2):	velocity = lerp(velocity, dir, 0.2)
 	
 func move_fish_impulse(dir : Vector2):
 	velocity = dir

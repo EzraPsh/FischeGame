@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://by6xhqjy210o6"]
+
+[ext_resource type="Script" path="res://changescene.gd" id="1_bk2r1"]
+[ext_resource type="FontFile" uid="uid://b4uyryit2a47f" path="res://Assets/Fonts/medieval-times-font/MedievalTimes-AL7l6.ttf" id="2_j0tei"]
+[ext_resource type="Texture2D" uid="uid://cvi44bbwq5vrd" path="res://Assets/PlayerFish/Charge/fish_charge_1.png" id="3_lkgk4"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_bk2r1")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Label" type="Label" parent="."]
+offset_left = -109.0
+offset_top = -147.0
+offset_right = 460.0
+offset_bottom = 32.0
+theme_override_fonts/font = ExtResource("2_j0tei")
+theme_override_font_sizes/font_size = 136
+text = "Fish Game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+offset_left = -97.0
+offset_top = 48.0
+offset_right = 233.0
+offset_bottom = 168.0
+theme_override_font_sizes/font_size = 46
+text = "Play"
+
+[node name="FishCharge1" type="Sprite2D" parent="."]
+position = Vector2(-330, -6)
+rotation = -0.574587
+texture = ExtResource("3_lkgk4")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
