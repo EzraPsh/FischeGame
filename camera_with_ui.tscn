@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://UIUpdate.gd" id="1_q5dwe"]
 [ext_resource type="Texture2D" uid="uid://tvt7lw41jfmk" path="res://icon.svg" id="2_qry2a"]
 
-[node name="Camera2D" type="Camera2D"]
+[node name="MainCam" type="Camera2D"]
 script = ExtResource("1_q5dwe")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
