@@ -1,0 +1,148 @@
+[gd_scene load_steps=31 format=3 uid="uid://epu4aqkucvcj"]
+
+[ext_resource type="Script" path="res://KingState/KingSM.gd" id="1_3ikp7"]
+[ext_resource type="Texture2D" uid="uid://bsekoly0ddynd" path="res://Assets/King/Idle/king_idle_1.png" id="2_ft5n4"]
+[ext_resource type="Script" path="res://KingState/KingIdle.gd" id="3_yij35"]
+[ext_resource type="Script" path="res://KingState/KingSummon.gd" id="4_jfyx7"]
+[ext_resource type="Script" path="res://KingState/KingVulnerable.gd" id="5_vl164"]
+[ext_resource type="Texture2D" uid="uid://cdj0rv2mfc5ny" path="res://Assets/King/Idle/king_idle_2.png" id="6_u250e"]
+[ext_resource type="Texture2D" uid="uid://cgynbkxh0mqf4" path="res://Assets/King/Idle/king_idle_3.png" id="7_2g6hw"]
+[ext_resource type="Texture2D" uid="uid://bibxm4uiuyvpj" path="res://Assets/King/Idle/king_idle_4.png" id="8_vfj55"]
+[ext_resource type="Texture2D" uid="uid://kgb3851ode4w" path="res://Assets/King/Idle/king_idle_5.png" id="9_t12vy"]
+[ext_resource type="Texture2D" uid="uid://dhqea3g4jg76v" path="res://Assets/King/Idle/king_idle_6.png" id="10_ej0xi"]
+[ext_resource type="Texture2D" uid="uid://xxxarof3r82x" path="res://Assets/King/Idle/king_idle_7.png" id="11_luby7"]
+[ext_resource type="Texture2D" uid="uid://cjjor1j5olnip" path="res://Assets/King/Idle/king_idle_8.png" id="12_5oocs"]
+[ext_resource type="Texture2D" uid="uid://bxrxblhgplswr" path="res://Assets/King/Attack/king_attack_1.png" id="13_ujnsr"]
+[ext_resource type="Texture2D" uid="uid://jcsvb1yudtj3" path="res://Assets/King/Attack/king_attack_2.png" id="14_2p6ni"]
+[ext_resource type="Texture2D" uid="uid://ctuun32idld5h" path="res://Assets/King/Attack/king_attack_3.png" id="15_0lpig"]
+[ext_resource type="Texture2D" uid="uid://yabm1j45c3gl" path="res://Assets/King/Attack/king_attack_4.png" id="16_8cetx"]
+[ext_resource type="Texture2D" uid="uid://vls7786j5c56" path="res://Assets/King/Attack/king_attack_5.png" id="17_2exk0"]
+[ext_resource type="Texture2D" uid="uid://bv68wiob0aia4" path="res://Assets/King/Attack/king_attack_6.png" id="18_0wqcs"]
+[ext_resource type="Texture2D" uid="uid://bthu45k8kt1no" path="res://Assets/King/Attack/king_attack_7.png" id="19_nvcc4"]
+[ext_resource type="Texture2D" uid="uid://cn7qeiydj38bb" path="res://Assets/King/Attack/king_attack_8.png" id="20_8ynmc"]
+[ext_resource type="Texture2D" uid="uid://0e3mmqbyvnot" path="res://Assets/king_stunned_5.png" id="21_lkt7a"]
+[ext_resource type="Texture2D" uid="uid://dn6x0g5x1kfa" path="res://Assets/king_stunned_6.png" id="22_waw6b"]
+[ext_resource type="Texture2D" uid="uid://bp6ilibsoosbn" path="res://Assets/king_stunned_7.png" id="23_nqtov"]
+[ext_resource type="Texture2D" uid="uid://b7f5etrme1sym" path="res://Assets/king_stunned_8.png" id="24_wi4bc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kncrf"]
+size = Vector2(90, 173)
+
+[sub_resource type="Animation" id="Animation_xeywn"]
+resource_name = "Idle"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_ft5n4"), ExtResource("6_u250e"), ExtResource("7_2g6hw"), ExtResource("8_vfj55"), ExtResource("9_t12vy"), ExtResource("10_ej0xi"), ExtResource("11_luby7"), ExtResource("12_5oocs")]
+}
+
+[sub_resource type="Animation" id="Animation_ic6wa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_ft5n4")]
+}
+
+[sub_resource type="Animation" id="Animation_afemv"]
+resource_name = "Attack"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("13_ujnsr"), ExtResource("14_2p6ni"), ExtResource("15_0lpig"), ExtResource("16_8cetx"), ExtResource("17_2exk0"), ExtResource("18_0wqcs"), ExtResource("19_nvcc4"), ExtResource("20_8ynmc")]
+}
+
+[sub_resource type="Animation" id="Animation_sstrx"]
+resource_name = "Stun"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("21_lkt7a"), ExtResource("22_waw6b"), ExtResource("23_nqtov"), ExtResource("24_wi4bc")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cd1wh"]
+_data = {
+"Attack": SubResource("Animation_afemv"),
+"Idle": SubResource("Animation_xeywn"),
+"RESET": SubResource("Animation_ic6wa"),
+"Stun": SubResource("Animation_sstrx")
+}
+
+[node name="King" type="RigidBody2D" node_paths=PackedStringArray("fish_state")]
+collision_layer = 2
+collision_mask = 3
+gravity_scale = 0.0
+freeze = true
+script = ExtResource("1_3ikp7")
+fish_state = NodePath("State/KingIdle")
+health = 5
+
+[node name="Icon" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ft5n4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 38.5)
+shape = SubResource("RectangleShape2D_kncrf")
+
+[node name="State" type="Node" parent="."]
+
+[node name="KingSummon" type="Node" parent="State" node_paths=PackedStringArray("default_state")]
+script = ExtResource("4_jfyx7")
+default_state = NodePath("../KingIdle")
+
+[node name="SummonTimer" type="Timer" parent="State/KingSummon"]
+wait_time = 1.5
+
+[node name="KingVulnerable" type="Node" parent="State" node_paths=PackedStringArray("default_state")]
+script = ExtResource("5_vl164")
+default_state = NodePath("../KingIdle")
+
+[node name="VulnTimer" type="Timer" parent="State/KingVulnerable"]
+wait_time = 5.0
+
+[node name="KingIdle" type="Node" parent="State" node_paths=PackedStringArray("summon_state", "stun_state")]
+script = ExtResource("3_yij35")
+summon_state = NodePath("../KingSummon")
+stun_state = NodePath("../KingVulnerable")
+
+[node name="WaitTimer" type="Timer" parent="State/KingIdle"]
+wait_time = 4.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_cd1wh")
+}
